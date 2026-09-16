@@ -34,7 +34,9 @@ window.addEventListener('message',function(event){var frame=document.getElementB
 
 ## Britain is not alone
 
-The simplest version of the story does not survive contact with Europe.
+The simplest version of the story does not survive contact with Britain itself. [Gatwick's Northern Runway project received development consent in September 2025](https://www.gov.uk/government/news/gatwick-airport-northern-runway-development-consent-decision-announced). The same national carbon-budget framework that makes Heathrow contentious can accommodate airport expansion. The question is what a particular project must demonstrate, not whether Britain builds airports.
+
+The European comparisons complicate the picture further.
 
 France is the clearest counterexample. Paris Charles de Gaulle was supposed to get a huge Terminal 4. In 2021 the French government told the airport operator to abandon the project because it no longer matched the country's environmental ambitions. Paris is now planning substantial modernisation again, but the cancellation matters. Climate policy did not merely require a greener terminal. It helped stop a capacity project.
 
@@ -42,15 +44,13 @@ Austria provides an even stranger case. In 2017 a court rejected Vienna Airport'
 
 Then there is Amsterdam. Schiphol is still investing heavily in its infrastructure, but Dutch governments have also spent years trying to constrain flight numbers, principally around noise and environmental impacts. The exact cap has moved through litigation and politics. The important point is that the policy argument is about how much aviation the hub should accommodate, not simply how efficient the terminal buildings can become.
 
-Norway is a less clear-cut case. [Avinor reports a 2024 committee assessment](https://om.avinor.no/en/innovation/third-runway/progress-plan/) that a third Oslo runway is unlikely to be needed before 2040. That is evidence about capacity and timing, not by itself proof of a climate condition on approval.
-
-So Britain is not uniquely restrictive. If anything, the dataset suggests a broader European pattern: major airport projects are more likely to encounter climate and environmental policy as a constraint on *whether or how much* capacity should be built.
+These cases establish that Britain has peers in bringing climate or wider environmental limits into capacity decisions. A selected sample cannot tell us how much more restrictive Europe is overall.
 
 But that is only half the result. Europe is still expanding airports too. Frankfurt [opened Terminal 3 in April 2026](https://www.fraport.com/en/newsroom/press-releases/2026/q1/fraport-inaugurates-the-new-terminal-3.html). Madrid is planning a major expansion. Lisbon has selected a site for an entirely new airport that could eventually be enormous. Dublin is trying to raise its passenger cap. Copenhagen is expanding Terminal 3.
 
 The dividing line is not "Europe says no, everyone else says yes". It is messier than that.
 
-## Singapore's cleaner contradiction
+## Singapore makes the distinction clearer
 
 Singapore is the comparison I find most useful because it removes an easy explanation.
 
@@ -60,7 +60,7 @@ It is also building Changi Terminal 5, designed to add roughly 50 million passen
 
 Singapore's policy is therefore not "aviation growth does not matter for climate". It is closer to: **grow the hub and decarbonise the aviation that uses it**. The blueprint describes its approach in almost exactly those terms, balancing environmental sustainability with the competitiveness and continued growth of the air hub.
 
-That is a coherent position. It is also importantly different from the British argument.
+That is a stated strategy, not evidence that the planned growth and emissions reductions will ultimately be reconciled.
 
 In Britain, the question is not only whether aviation can reach net zero by 2050. The emissions on the way there have to fit inside a sequence of economy-wide carbon budgets. The Sixth Carbon Budget, covering 2033-37, is the first formally to include the UK's share of international aviation and shipping; the Seventh does too. ([UK government](https://www.gov.uk/guidance/carbon-budgets))
 
@@ -72,19 +72,11 @@ This is why "Britain is anti-airport" is the wrong reading. The system is design
 
 ## What is covered, and what is constrained?
 
-“Net zero airport” can describe very different promises. Two questions help separate them: **which emissions are covered, and what does the commitment require before expansion can go ahead?** These are separate dimensions, not three official levels of climate ambition.
+Two questions help separate these promises. **Which emissions are covered?** A target might stop at airport operations or include aircraft and international aviation. **What constrains the decision?** It might be an aspiration, a planning consideration or a binding requirement capable of limiting capacity. Our map interprets the evidence about the second question; it is not an official legal classification.
 
-Coverage can stop at the airport operator's buildings and vehicles, extend to the aircraft using the airport, or sit within national emissions accounting that explicitly includes international aviation. The boundary has to be checked in the actual target. An operational commitment does not establish that flights are covered, and a national net-zero pledge does not establish how international aviation is allocated.
+This is different from the [GHG Protocol's Scopes 1, 2 and 3](https://ghgprotocol.org/sites/default/files/standards/ghg-protocol-revised.pdf), which describe emissions relative to an organisation: direct emissions, purchased energy and other indirect value-chain emissions. An airline's fuel burn is its Scope 1; aircraft emissions can sit in an airport operator's Scope 3. Airport operational net zero often concerns the operator's Scopes 1 and 2. A national carbon budget is a different accounting and legal framework, not another corporate scope. Neither a broader footprint nor a higher scope number automatically means a stronger constraint on expansion.
 
-This relates to, but is not the same as, the [GHG Protocol's Scopes 1, 2 and 3](https://ghgprotocol.org/sites/default/files/standards/ghg-protocol-revised.pdf). Scope 1 covers an organisation's direct emissions; Scope 2 covers purchased energy; Scope 3 covers other indirect value-chain emissions. The reporting organisation matters: jet fuel burned by an airline is its Scope 1, while aircraft emissions can sit in an airport operator's Scope 3. These are overlapping perspectives, not totals to add together.
-
-Airport operational net zero therefore often concerns the operator's Scopes 1 and 2. Wider commitments need separate scrutiny: [Airport Carbon Accreditation's Level 5](https://www.airportcarbonaccreditation.org/about/7-levels-of-accreditation/level-5/), for example, distinguishes an achieved net-zero balance for Scopes 1 and 2 from action towards net zero across relevant Scope 3 sources. Neither the label nor the scope number tells us whether more flights can be approved.
-
-That is the second question: **what constrains the decision?** A target can be an aspiration, a consideration assessed in planning, or a binding requirement capable of limiting capacity. Those descriptions concern the decision mechanism. Our map's four prominence categories are interpretive summaries of the available evidence, not official legal classifications or a measurement of emissions coverage.
-
-Singapore makes the separation useful. Its aviation target explicitly includes domestic and international flights, yet its [Blueprint](https://www.caas.gov.sg/sustainability/sustainable-air-hub-blueprint/) supports continued hub growth alongside decarbonisation. Britain's [carbon budgets](https://www.gov.uk/guidance/carbon-budgets) place its share of international aviation inside an economy-wide emissions envelope. That is a national legal framework, not “Scope 3” or a fourth corporate scope. Inclusion makes compatibility a consequential question; it does not establish that every expansion is incompatible.
-
-The [CCC's Heathrow advice](https://www.theccc.org.uk/publication/advice-to-the-uk-government-on-proposed-heathrow-airport-expansion/) illustrates the distinction: stronger aviation policy could make expansion compatible. What matters is the combination of emissions coverage and an enforceable constraint, not simply how broad a net-zero slogan sounds.
+The distinction matters because a promise to decarbonise aviation and a requirement to demonstrate compatibility before adding capacity ask different things of a project.
 
 ## The rest of the world is building
 
@@ -109,8 +101,6 @@ First, airport decisions are path-dependent. Brisbane's new parallel runway open
 
 Second, "environment" is broader than carbon. Schiphol's constraints are inseparable from noise and local pollution. Vienna's runway litigation involved a particular legal context. Dublin's passenger-cap argument includes surface access and planning conditions. The reviewed coding includes broader environmental gating at Schiphol; it should not be read as a climate-only ranking. Its noise constraint is not equivalent to Britain's carbon-budget test.
 
-The coding also produces some awkward cases. Gatwick's Northern Runway was approved inside the same British carbon-budget architecture that makes Heathrow such a difficult case. That is useful evidence, not a bug. A strong climate framework does not mechanically prohibit airport growth. Project scale, demand assumptions, existing capacity, mitigation and the government's wider aviation policy all matter.
-
 The categories are therefore best read as an interpretation of **institutional friction**. The dataset was assembled with ChatGPT assistance; the classifications are analytical judgements, not ratings issued by the linked sources. The workbook records that analysis but is not independent evidence for it. At one end, climate is something a project must survive. At the other, it is something the airport is expected to manage while the strategic case for expansion is largely taken as given.
 
 I also left unknowns as unknowns. The phrase "net zero by 2050" is easy to find in national plans; whether it explicitly includes international aviation on a comparable accounting basis often is not. The interactive only marks that inclusion as established for the UK and Singapore, supported by the government sources linked above. Elsewhere, “Not explicit” means it has not been established in this research, not that the country excludes aviation.
@@ -125,14 +115,12 @@ The second was that the apparent global airport boom was misleading, and that ot
 
 Neither is quite right.
 
-Britain has peers. France has cancelled airport capacity on environmental grounds. Dutch policy has tried to constrain Schiphol. Austria has litigated a runway through the climate question. Within this sample, Europe does look more willing than Asia or the Gulf to make aviation's externalities part of the capacity decision.
+Britain has peers. France has cancelled airport capacity on environmental grounds. Dutch policy has tried to constrain Schiphol. Austria has litigated a runway through the climate question. These cases show several ways environmental limits can enter a capacity decision; they do not establish a ranking of continents.
 
-But airport expansion remains widespread even among governments with serious climate commitments. Singapore is the cleanest proof that this is not simply hypocrisy or an absence of policy. It has chosen a different sequencing: protect the hub's growth, then use fuel policy, technology and carbon measures to drive the sector towards net zero.
+But explicit aviation climate commitments also coexist with substantial expansion. Singapore plans hub growth alongside decarbonisation. Whether the promised reductions can keep pace remains a question of delivery, not something the target settles.
 
 Britain's unusual feature is not that it has a climate target. Almost everyone in this dataset has one of some kind. It is that international aviation is being pulled inside legally binding economy-wide carbon budgets, making the emissions enabled by a runway harder to leave in a separate box.
 
-There is a cost to that visibility. Heathrow becomes slow, legalistic and politically exhausting. The same accounting can make infrastructure harder to build before the technologies expected to decarbonise it are proven at scale.
+That compatibility requirement is consequential. It does not, by itself, explain Heathrow's long history of delay, or establish that every proposed expansion should fail.
 
-There is also an advantage. It makes it harder to solve the contradiction by changing the subject from aircraft to terminals.
-
-That, more than the third runway itself, is what the Heathrow argument is testing. The world is not choosing between airports and climate policy. It is choosing where, institutionally, to force the trade-off between them to be paid.
+A net-zero target tells us where a government says aviation should end up. An expansion decision reveals what it requires before allowing more capacity. The useful comparison is between those requirements, and whether the promised emissions reductions arrive.

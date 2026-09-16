@@ -61,3 +61,5 @@ The extended review corrected the local test server's CSS MIME type and regenera
 ## Framing revision
 
 Replaced the three-level net-zero ladder with two questions: emissions coverage and decision constraint. Added an organisation-relative Scope 1/2/3 explanation and direct GHG Protocol / Airport Carbon Accreditation references in the article and interactive. Source wording now identifies ChatGPT-assisted interpretation rather than treating the handoff workbook as external substantiation. All 30 records and their uncertainty remain unchanged by this revision. The separate draft preview is refreshed; production remains untouched.
+
+The subsequent editorial pass brings Gatwick forward, consolidates the policy/scopes explanation, qualifies Singapore's delivery claims, removes the Oslo narrative digression and unsupported Heathrow-delay attribution, and tightens the conclusion. The full project explorer is collapsed by default; all 30 records remain available. The map now places the sample/noise-versus-carbon limitations next to the visualisation.
