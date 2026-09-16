@@ -1,0 +1,24 @@
+# Current-claim review: 16 September 2026
+
+This continues the supplied implementation and reviewed workbook, not a new worldwide census. All 30 original rows matched the workbook's 15 source fields exactly before amendments. `data-amendments.json` records every subsequent JSON difference, including original values. Run `python3 tests/data.py` with the supplied ZIP and workbook in the parent directory to reproduce the comparison.
+
+The underlying coding remains **4 central, 8 significant, 14 secondary, 4 limited**. The workbook synthesis's 5 limited / 13 secondary is inconsistent with its rows and has not been adopted. Scores are qualitative interpretations of heterogeneous projects, not comparable units of capacity or a causal ranking.
+
+| Claim | Verification and disposition |
+| --- | --- |
+| UK budgets include international aviation | [Current government budget guidance](https://www.gov.uk/guidance/carbon-budgets) confirms inclusion from the Sixth Carbon Budget, 2033–37, and links the 2026 implementing regulations. Distinguish this from national NDC accounting. |
+| Current CCC Heathrow advice | [16 September advice](https://www.theccc.org.uk/publication/advice-to-the-uk-government-on-proposed-heathrow-airport-expansion/) says expansion requires stronger aviation emissions policy to be compatible with budgets. Corrected 6.9% wording: the full impact of expansion, not the whole expanded airport. The source was independently retrieved through current search indexing; direct site access was intermittently blocked. |
+| Singapore includes international aviation | [CAAS Blueprint](https://www.caas.gov.sg/sustainability/sustainable-air-hub-blueprint/) explicitly targets net-zero domestic and international aviation in 2050, separately from its airport operational target. Retained. |
+| Singapore SAF levy timing | [CAAS deferral notice](https://www.caas.gov.sg/resources/media-and-publication/newsroom/sustainable-aviation-fuel--saf--levy-to-be-deferred/) moves passenger departures to 1 January 2027, tickets sold from 1 October 2026. Corrected outdated 2026 departure claim. |
+| Changi capacity | [Airport project page](https://www.changiairport.com/en/corporate/about-us/future-developments/terminal-5.html) confirms around 50m annual passenger movements in phase one, expected mid-2030s. This is planned capacity, not realised traffic. |
+| France CDG T4 | [Contemporaneous Reuters report](https://news.trust.org/item/20210211095959-s2l9g/) confirms 2021 cancellation citing climate and environmental concerns. Retain the historical case, not a claim that France prohibits all expansion. |
+| Vienna | [Court record](https://www.vwgh.gv.at/medien/mitteilungen/2019-03-14-flughafen.html) confirms final approval in March 2019 after earlier litigation. [Operator November 2025 announcement](https://viennaairport.com/jart/prj3/news_press/uploads/db-con_def-uploads/va-news/PA2025/E-68_2025.pdf) discontinues the project, citing economics, airline opposition and capacity changes. Updated current status; retained the historical climate-litigation score. Do not attribute the final abandonment to climate policy. |
+| Schiphol | [Dutch government announcement](https://www.rijksoverheid.nl/actueel/nieuws/2025/05/07/kabinet-kiest-voor-nieuwe-aanpak-geluidsoverlast-schiphol-balans-tussen-geluidsreductie-en-beheerste-groei) establishes a noise-based movement cap. Clarified that this is broader environmental gating, not equivalent evidence of a UK-style carbon test. No new precise current cap is asserted in the article. |
+| Frankfurt | [Fraport opening announcement](https://www.fraport.com/en/newsroom/press-releases/2026/q1/fraport-inaugurates-the-new-terminal-3.html) confirms operations from 23 April 2026. Corrected article and row status. |
+| US federal goal | [FAA 2021 plan](https://www.faa.gov/general/2021-united-states-aviation-climate-action-plan) establishes the historical aviation goal. It does not establish unchanged current policy. Dated the article's claims and marked current federal continuity uncertain in US rows and the commitment filter. |
+
+## Limits that remain visible
+
+International-aviation inclusion outside Britain and Singapore remains unknown in the reviewed handoff; national net-zero targets do not establish it. Toronto and Vancouver remain low-confidence; medium-confidence records have not been silently promoted. This pass independently checks the load-bearing comparisons above, not every current fact across all 30 projects. Historical commitments are not proof of current policy or commitments in force when a project was approved. France and Austria are historical counterexamples; Dutch constraints include noise.
+
+The supplied coastline geometry has no documented upstream provenance in the ZIP. It is retained unchanged as supplied; confirm its attribution/licence before production publication. No production publication has occurred.

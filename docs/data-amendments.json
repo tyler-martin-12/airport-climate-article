@@ -1,0 +1,92 @@
+[
+  {
+    "id": "terminal-3",
+    "field": "status",
+    "before": "Opening/commissioning 2026",
+    "after": "Opened 23 April 2026"
+  },
+  {
+    "id": "terminal-3",
+    "field": "verification_note",
+    "before": null,
+    "after": "Regular operations started 23 April 2026."
+  },
+  {
+    "id": "terminal-3",
+    "field": "verification_source",
+    "before": null,
+    "after": "https://www.fraport.com/en/newsroom/press-releases/2026/q1/fraport-inaugurates-the-new-terminal-3.html"
+  },
+  {
+    "id": "vienna-third-runway",
+    "field": "status",
+    "before": "Approved after litigation",
+    "after": "Abandoned November 2025 after legal approval"
+  },
+  {
+    "id": "vienna-third-runway",
+    "field": "status_group",
+    "before": "Approved",
+    "after": "Cancelled"
+  },
+  {
+    "id": "vienna-third-runway",
+    "field": "verification_note",
+    "before": null,
+    "after": "Operator discontinued the runway on economic and capacity grounds; the climate score describes the earlier litigation, not the reason for abandonment."
+  },
+  {
+    "id": "vienna-third-runway",
+    "field": "verification_source",
+    "before": null,
+    "after": "https://viennaairport.com/jart/prj3/news_press/uploads/db-con_def-uploads/va-news/PA2025/E-68_2025.pdf"
+  },
+  {
+    "id": "jfk-redevelopment",
+    "field": "national_climate_goal",
+    "before": "Federal 2050 goal, less binding than UK budgets",
+    "after": "Federal 2050 goal in the 2021 policy context; current continuity not established"
+  },
+  {
+    "id": "jfk-redevelopment",
+    "field": "commitment_type",
+    "before": "Target / pledge",
+    "after": "Historical target / current status uncertain"
+  },
+  {
+    "id": "jfk-redevelopment",
+    "field": "verification_note",
+    "before": null,
+    "after": "The FAA 2021 plan documents a historical aviation target. It does not establish unchanged current federal policy."
+  },
+  {
+    "id": "jfk-redevelopment",
+    "field": "verification_source",
+    "before": null,
+    "after": "https://www.faa.gov/general/2021-united-states-aviation-climate-action-plan"
+  },
+  {
+    "id": "lax-modernization",
+    "field": "national_climate_goal",
+    "before": "California carbon neutrality 2045 policy",
+    "after": "Federal 2050 goal in the 2021 policy context; current continuity not established"
+  },
+  {
+    "id": "lax-modernization",
+    "field": "commitment_type",
+    "before": "Target / pledge",
+    "after": "Historical target / current status uncertain"
+  },
+  {
+    "id": "lax-modernization",
+    "field": "verification_note",
+    "before": null,
+    "after": "The FAA 2021 plan documents a historical aviation target. It does not establish unchanged current federal policy."
+  },
+  {
+    "id": "lax-modernization",
+    "field": "verification_source",
+    "before": null,
+    "after": "https://www.faa.gov/general/2021-united-states-aviation-climate-action-plan"
+  }
+]
