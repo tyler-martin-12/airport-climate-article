@@ -136,5 +136,23 @@
     "field": "verification_note",
     "before": null,
     "after": "Current operator target covers net-zero operations by 2030. The broader expansion entry and its climate-constraint coding remain low-confidence; this is not a verified aircraft-emissions target."
+  },
+  {
+    "id": "gatwick-northern-runway",
+    "field": "evidence_note",
+    "before": "Approved under same national framework as Heathrow.",
+    "after": "Additional emissions accepted as manageable through national aviation decarbonisation policy; binding budgets were not treated as an automatic project veto."
+  },
+  {
+    "id": "gatwick-northern-runway",
+    "field": "verification_note",
+    "before": null,
+    "after": "The decision relied on forecast reductions and Jet Zero policy despite technological uncertainty. Legal acceptance is not verification that those reductions will be delivered."
+  },
+  {
+    "id": "gatwick-northern-runway",
+    "field": "verification_source",
+    "before": null,
+    "after": "https://www.bailii.org/ew/cases/EWCA/Civ/2026/1040.html"
   }
 ]

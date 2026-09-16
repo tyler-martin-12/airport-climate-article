@@ -36,6 +36,14 @@ window.addEventListener('message',function(event){var frame=document.getElementB
 
 The simplest version of the story does not survive contact with Britain itself. [Gatwick's Northern Runway project received development consent in September 2025](https://www.gov.uk/government/news/gatwick-airport-northern-runway-development-consent-decision-announced). The same national carbon-budget framework that makes Heathrow contentious can accommodate airport expansion. The question is what a particular project must demonstrate, not whether Britain builds airports.
 
+That approval was not a quick exemption from the rules. A [provisional decision in February 2025](https://www.gov.uk/government/speeches/transport-planning-gatwick-airport) led to further consideration of conditions, including noise and public transport, before final consent and subsequent litigation.
+
+The carbon reasoning matters more than the headline approval. The government accepted that Gatwick would add emissions, but concluded that these could be managed within its aviation-wide Jet Zero strategy and its plans for meeting national targets. It relied on projected decarbonisation, acknowledging uncertainty about the technologies involved. The budgets constrain the economy as a whole; they do not automatically prohibit every project that increases emissions. ([Court of Appeal's account of the decision](https://www.bailii.org/ew/cases/EWCA/Civ/2026/1040.html))
+
+The legal distinction was between a significant emissions increase and one that would materially undermine meeting the UK's targets. Those are not the same finding. A decision surviving legal challenge does not demonstrate that the forecast reductions will actually arrive. ([Analysis of the High Court judgment](https://www.39essex.com/our-thinking/gatwicks-northern-runway-project-cleared-for-take-off-r-on-the-application-of-barclay-and-another-v-secretary-of-state-for-transport-and-another-2026-ewhc-1556-admin/))
+
+Gatwick therefore exposes a question that a simple approved/refused comparison misses: **how much confidence in future decarbonisation is enough to approve expansion now?**
+
 The European comparisons complicate the picture further.
 
 France is the clearest counterexample. Paris Charles de Gaulle was supposed to get a huge Terminal 4. In 2021 the French government told the airport operator to abandon the project because it no longer matched the country's environmental ambitions. Paris is now planning substantial modernisation again, but the cancellation matters. Climate policy did not merely require a greener terminal. It helped stop a capacity project.
@@ -64,11 +72,11 @@ That is a stated strategy, not evidence that the planned growth and emissions re
 
 In Britain, the question is not only whether aviation can reach net zero by 2050. The emissions on the way there have to fit inside a sequence of economy-wide carbon budgets. The Sixth Carbon Budget, covering 2033-37, is the first formally to include the UK's share of international aviation and shipping; the Seventh does too. ([UK government](https://www.gov.uk/guidance/carbon-budgets))
 
-That turns Heathrow into an accounting problem for the whole economy. If aviation emits more, something else has to emit less, or aviation policy has to become tougher, or removals have to make up the difference.
+That makes the emissions consequences a question for the whole economy. If aviation emits more, something else has to emit less, aviation policy has to become tougher, or removals have to make up the difference. But Gatwick shows that deciding whether a project fits still involves forecasts, policy assumptions and ministerial judgement. A binding budget is not a mechanical project-level veto.
 
 The CCC's new Heathrow advice makes the consequence explicit. Under current policy, it says, aviation emissions would not fall at all by 2050 even without Heathrow expansion. Its answer is not an unconditional ban on the runway. It says expansion could be compatible with the carbon budgets if government legislates stronger measures that make aviation fully address its residual emissions by 2050, including engineered removals where necessary.
 
-This is why "Britain is anti-airport" is the wrong reading. The system is designed to force the trade-off into the open.
+The UK–Singapore contrast is therefore one of institutional requirements, not a clean division between restricting growth and trusting technology. Both can approve expansion while relying on future decarbonisation. Britain brings those assumptions into a legally binding economy-wide budget framework; that does not remove the uncertainty or settle every planning decision.
 
 ## What is covered, and what is constrained?
 
@@ -76,7 +84,7 @@ Two questions help separate these promises. **Which emissions are covered?** A t
 
 This is different from the [GHG Protocol's Scopes 1, 2 and 3](https://ghgprotocol.org/sites/default/files/standards/ghg-protocol-revised.pdf), which describe emissions relative to an organisation: direct emissions, purchased energy and other indirect value-chain emissions. An airline's fuel burn is its Scope 1; aircraft emissions can sit in an airport operator's Scope 3. Airport operational net zero often concerns the operator's Scopes 1 and 2. A national carbon budget is a different accounting and legal framework, not another corporate scope. Neither a broader footprint nor a higher scope number automatically means a stronger constraint on expansion.
 
-The distinction matters because a promise to decarbonise aviation and a requirement to demonstrate compatibility before adding capacity ask different things of a project.
+The distinction matters because a compatibility assessment can expose assumptions that a headline target leaves unstated. It can also accept them: the existence of an assessment does not tell us how demanding its evidential threshold will be.
 
 ## The rest of the world is building
 
@@ -123,4 +131,4 @@ Britain's unusual feature is not that it has a climate target. Almost everyone i
 
 That compatibility requirement is consequential. It does not, by itself, explain Heathrow's long history of delay, or establish that every proposed expansion should fail.
 
-A net-zero target tells us where a government says aviation should end up. An expansion decision reveals what it requires before allowing more capacity. The useful comparison is between those requirements, and whether the promised emissions reductions arrive.
+A net-zero target tells us where a government says aviation should end up. An expansion decision reveals what it requires before allowing more capacity. The useful comparison is between those requirements, the confidence placed in future decarbonisation, and whether the promised emissions reductions arrive.

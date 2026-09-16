@@ -43,7 +43,7 @@
     "climate_debate": "Material planning issue",
     "prominence_score": 2,
     "prominence": "Significant",
-    "evidence_note": "Approved under same national framework as Heathrow.",
+    "evidence_note": "Additional emissions accepted as manageable through national aviation decarbonisation policy; binding budgets were not treated as an automatic project veto.",
     "interpretation": "UK counterexample.",
     "confidence": "High",
     "project_source": "https://www.gov.uk/government/news/gatwick-airport-northern-runway-development-consent-decision-announced",
@@ -51,7 +51,9 @@
     "region": "Europe",
     "longitude": -0.1821,
     "latitude": 51.1537,
-    "coordinate_note": "Approximate airport/project location for map placement; not an analytical field."
+    "coordinate_note": "Approximate airport/project location for map placement; not an analytical field.",
+    "verification_note": "The decision relied on forecast reductions and Jet Zero policy despite technological uncertainty. Legal acceptance is not verification that those reductions will be delivered.",
+    "verification_source": "https://www.bailii.org/ew/cases/EWCA/Civ/2026/1040.html"
   },
   {
     "id": "luton-expansion",
