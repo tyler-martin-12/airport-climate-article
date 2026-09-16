@@ -70,21 +70,21 @@ The CCC's new Heathrow advice makes the consequence explicit. Under current poli
 
 This is why "Britain is anti-airport" is the wrong reading. The system is designed to force the trade-off into the open.
 
-## Three different net zeros
+## What is covered, and what is constrained?
 
-A lot of the apparent contradiction disappears once you notice that "net zero airport" can mean three quite different things.
+“Net zero airport” can describe very different promises. Two questions help separate them: **which emissions are covered, and what does the commitment require before expansion can go ahead?** These are separate dimensions, not three official levels of climate ambition.
 
-The narrowest is **airport operations**. An airport can electrify ground vehicles, buy renewable electricity, improve terminal efficiency and call its own operations net zero. Those are real emissions reductions. But they do not, by themselves, cover most of the emissions associated with the aircraft taking off from the runways.
+Coverage can stop at the airport operator's buildings and vehicles, extend to the aircraft using the airport, or sit within national emissions accounting that explicitly includes international aviation. The boundary has to be checked in the actual target. An operational commitment does not establish that flights are covered, and a national net-zero pledge does not establish how international aviation is allocated.
 
-The second is **aviation-sector net zero**. Now aircraft emissions are inside the promise. Singapore belongs here. The United States' [2021 FAA aviation climate plan](https://www.faa.gov/general/2021-united-states-aviation-climate-action-plan) also set a path towards net-zero greenhouse-gas emissions from the US aviation sector by 2050. This is a much more demanding target than greening terminal buildings.
+This relates to, but is not the same as, the [GHG Protocol's Scopes 1, 2 and 3](https://ghgprotocol.org/sites/default/files/standards/ghg-protocol-revised.pdf). Scope 1 covers an organisation's direct emissions; Scope 2 covers purchased energy; Scope 3 covers other indirect value-chain emissions. The reporting organisation matters: jet fuel burned by an airline is its Scope 1, while aircraft emissions can sit in an airport operator's Scope 3. These are overlapping perspectives, not totals to add together.
 
-The third is what Britain has moved towards: **an economy-wide carbon budget that explicitly includes international aviation**. This does something the other two do not necessarily do. It creates a finite emissions envelope and makes aviation compete inside it.
+Airport operational net zero therefore often concerns the operator's Scopes 1 and 2. Wider commitments need separate scrutiny: [Airport Carbon Accreditation's Level 5](https://www.airportcarbonaccreditation.org/about/7-levels-of-accreditation/level-5/), for example, distinguishes an achieved net-zero balance for Scopes 1 and 2 from action towards net zero across relevant Scope 3 sources. Neither the label nor the scope number tells us whether more flights can be approved.
 
-That institutional detail matters more than I expected when I started this.
+That is the second question: **what constrains the decision?** A target can be an aspiration, a consideration assessed in planning, or a binding requirement capable of limiting capacity. Those descriptions concern the decision mechanism. Our map's four prominence categories are interpretive summaries of the available evidence, not official legal classifications or a measurement of emissions coverage.
 
-A country can have a 2050 net-zero target and still rationally approve a new runway if its framework assumes future sustainable fuels, more efficient aircraft, carbon pricing or removals will reconcile the two. It can have an airport with a flawless operational net-zero plan while the flights enabled by that airport keep growing. And it can have a serious aviation-sector target without making the carbon consequences of each individual infrastructure decision a legal gating test.
+Singapore makes the separation useful. Its aviation target explicitly includes domestic and international flights, yet its [Blueprint](https://www.caas.gov.sg/sustainability/sustainable-air-hub-blueprint/) supports continued hub growth alongside decarbonisation. Britain's [carbon budgets](https://www.gov.uk/guidance/carbon-budgets) place its share of international aviation inside an economy-wide emissions envelope. That is a national legal framework, not “Scope 3” or a fourth corporate scope. Inclusion makes compatibility a consequential question; it does not establish that every expansion is incompatible.
 
-Those positions may turn out to be too optimistic about technology. They may also be right. But they are not logically inconsistent in the way they first appear.
+The [CCC's Heathrow advice](https://www.theccc.org.uk/publication/advice-to-the-uk-government-on-proposed-heathrow-airport-expansion/) illustrates the distinction: stronger aviation policy could make expansion compatible. What matters is the combination of emissions coverage and an enforceable constraint, not simply how broad a net-zero slogan sounds.
 
 ## The rest of the world is building
 
@@ -111,9 +111,9 @@ Second, "environment" is broader than carbon. Schiphol's constraints are insepar
 
 The coding also produces some awkward cases. Gatwick's Northern Runway was approved inside the same British carbon-budget architecture that makes Heathrow such a difficult case. That is useful evidence, not a bug. A strong climate framework does not mechanically prohibit airport growth. Project scale, demand assumptions, existing capacity, mitigation and the government's wider aviation policy all matter.
 
-The categories are therefore best read as a measure of **institutional friction**. At one end, climate is something a project must survive. At the other, it is something the airport is expected to manage while the strategic case for expansion is largely taken as given.
+The categories are therefore best read as an interpretation of **institutional friction**. The dataset was assembled with ChatGPT assistance; the classifications are analytical judgements, not ratings issued by the linked sources. The workbook records that analysis but is not independent evidence for it. At one end, climate is something a project must survive. At the other, it is something the airport is expected to manage while the strategic case for expansion is largely taken as given.
 
-I also left unknowns as unknowns. The phrase "net zero by 2050" is easy to find in national plans; whether it explicitly includes international aviation on a comparable accounting basis often is not. The interactive only marks that inclusion as established where the research handoff or a primary source made it clear. A blank in that field is not evidence that a country excludes aviation.
+I also left unknowns as unknowns. The phrase "net zero by 2050" is easy to find in national plans; whether it explicitly includes international aviation on a comparable accounting basis often is not. The interactive only marks that inclusion as established for the UK and Singapore, supported by the government sources linked above. Elsewhere, “Not explicit” means it has not been established in this research, not that the country excludes aviation.
 
 ## What the argument is really about
 

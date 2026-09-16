@@ -24,27 +24,27 @@
 <div id="detail" class="detail" aria-live="polite"><p class="detail-empty">Select a marker, table row or card to inspect a project.</p></div>
 </section>
 <section class="panel">
-<h2>Explore the underlying projects</h2><p class="panel-sub">Filters update both the map and the dataset. “International aviation included” is deliberately conservative: where the handoff did not establish explicit inclusion, the field stays unknown.</p>
+<h2>Explore the underlying projects</h2><p class="panel-sub">Filters update both the map and the dataset. Coverage and decision constraints are shown separately in each project panel. International-aviation inclusion stays unknown where direct evidence has not established it.</p>
 <div class="filters">
 <label>Region<select id="regionFilter"><option value="">All regions</option></select></label>
 <label>Project type<select id="typeFilter"><option value="">All types</option></select></label>
 <label>Status<select id="statusFilter"><option value="">All statuses</option></select></label>
-<label>Climate constraint<select id="promFilter"><option value="">All categories</option></select></label>
+<label>Constraint interpretation<select id="promFilter"><option value="">All categories</option></select></label>
 <label>National commitment<select id="commitFilter"><option value="">All commitments</option></select></label>
 </div>
 <p id="count" class="count"></p>
-<div class="table-wrap"><table><thead><tr><th data-sort="project">Project ↕</th><th data-sort="country">Country ↕</th><th data-sort="project_type">Type ↕</th><th data-sort="status_group">Status ↕</th><th data-sort="prominence_score">Climate constraint ↕</th><th data-sort="capacity">Capacity / scale ↕</th></tr></thead><tbody id="tbody"></tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th data-sort="project">Project ↕</th><th data-sort="country">Country ↕</th><th data-sort="project_type">Type ↕</th><th data-sort="status_group">Status ↕</th><th data-sort="prominence_score">Constraint interpretation ↕</th><th data-sort="capacity">Capacity / scale ↕</th></tr></thead><tbody id="tbody"></tbody></table></div>
 <div id="cards" class="cards"></div>
 </section>
 <section class="panel netzero">
-<h2>Three things called “net zero”</h2><p class="panel-sub">They sit at different levels of the emissions system. Moving right makes the claim more relevant to whether extra flights fit within a national climate pathway.</p>
-<div class="ladder">
-<div class="step"><span class="num">01 · SITE</span><h3>Airport operations</h3><p>Terminals, vehicles, purchased electricity and other airport-controlled emissions. Important, but usually a small slice of the climate impact associated with the flights an airport enables.</p><span class="arrow" aria-hidden="true">→</span></div>
-<div class="step"><span class="num">02 · SECTOR</span><h3>Aviation sector</h3><p>Aircraft emissions enter the target. Singapore's 2050 goal explicitly covers domestic and international aviation while Changi T5 expands the hub.</p><span class="arrow" aria-hidden="true">→</span></div>
-<div class="step"><span class="num">03 · ECONOMY</span><h3>Carbon budget including aviation</h3><p>International aviation competes for a finite economy-wide emissions budget. From the UK's Sixth Carbon Budget, that accounting link is explicit.</p></div>
+<h2>Two questions, not a ladder</h2><p class="panel-sub">Emissions coverage and constraints on approval are separate dimensions. Neither is equivalent to Scopes 1, 2 and 3.</p>
+<div class="ladder" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))">
+<div class="step"><span class="num">COVERAGE</span><h3>Whose emissions?</h3><p>Check the target's boundary: airport operations, aircraft emissions, and the treatment of international aviation. A national net-zero pledge alone does not establish flight coverage.</p><p><a href="https://www.caas.gov.sg/sustainability/sustainable-air-hub-blueprint/" target="_blank" rel="noreferrer">Singapore: domestic and international aviation</a></p></div>
+<div class="step"><span class="num">DECISION CONSTRAINT</span><h3>What can limit expansion?</h3><p>Distinguish an aspiration, a planning consideration and a binding requirement capable of limiting capacity. Our marker categories interpret the evidence about this question; they are not official legal ratings.</p><p><a href="https://www.gov.uk/guidance/carbon-budgets" target="_blank" rel="noreferrer">UK: economy-wide carbon budgets</a></p></div>
 </div>
+<details><summary>How this relates to Scopes 1, 2 and 3</summary><p>Scopes describe emissions relative to an organisation: direct emissions (1), purchased energy (2), and other indirect value-chain emissions (3). An airline's fuel burn is its Scope 1; aircraft emissions can be an airport operator's Scope 3. Do not add those overlapping inventories. A national carbon budget is a different accounting and legal framework, not a corporate scope.</p><p>Airport operational net zero often covers the operator's Scopes 1 and 2. Check wider promises separately: coverage does not itself establish a restriction on expansion.</p><p><a href="https://ghgprotocol.org/sites/default/files/standards/ghg-protocol-revised.pdf" target="_blank" rel="noreferrer">GHG Protocol Corporate Standard, chapters 3–4</a> · <a href="https://www.airportcarbonaccreditation.org/about/7-levels-of-accreditation/level-5/" target="_blank" rel="noreferrer">Airport Carbon Accreditation boundaries</a></p></details>
 </section>
-<footer>Source: reviewed project handoff workbook supplied by Tyler Martin, supplemented only where noted. Prominence coding is interpretive. “Unknown” is not treated as “no”. Project statuses are a 16 September 2026 research snapshot.</footer>
+<footer>Evidence: project and policy sources are linked in each project panel. The dataset was assembled with ChatGPT assistance; prominence categories are our interpretations, not ratings issued by those sources. A source for a project's existence or net-zero target does not by itself establish climate's role in approval. Confidence and verification notes identify limitations. “Not explicit” means not established in this research, not “no”. Snapshot: 16 September 2026.</footer>
 </main>
 <script src="./app.js"></script><script src="./resize.js"></script>
 </body></html>

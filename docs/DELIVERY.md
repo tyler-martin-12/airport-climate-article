@@ -57,3 +57,7 @@ See FACT-CHECK.md for primary/reputable source URLs and reasoning, and data-amen
 - npm's existing dependency advisories remain for a separate reviewed maintenance change.
 
 The extended review corrected the local test server's CSS MIME type and regenerated article screenshots. A computed-style assertion now prevents unstyled article renders from passing unnoticed. See QA.md for this distinction from the earlier standalone-interactive checks.
+
+## Framing revision
+
+Replaced the three-level net-zero ladder with two questions: emissions coverage and decision constraint. Added an organisation-relative Scope 1/2/3 explanation and direct GHG Protocol / Airport Carbon Accreditation references in the article and interactive. Source wording now identifies ChatGPT-assisted interpretation rather than treating the handoff workbook as external substantiation. All 30 records and their uncertainty remain unchanged by this revision. The separate draft preview is refreshed; production remains untouched.
