@@ -7,11 +7,11 @@ slug: "airport-climate"
 tags: ["aviation", "climate", "policy"]
 ---
 
-My wife Sarah works for Britain's Climate Change Committee. This is normally a useful arrangement if you want to know whether some apparently sensible idea is, in fact, incompatible with the country's carbon budgets.
+My wife Sarah works for Britain's Climate Change Committee.
 
 Recently she was telling me about Heathrow. The government wants a third runway. Heathrow wants a third runway. And the Climate Change Committee has just said, in unusually plain language, that the government cannot expand the airport under current policy without requiring aviation to clean up its emissions much more aggressively. The Committee estimates that the full impact of Heathrow expansion would account for 6.9% of the UK's remaining positive emissions in 2050. ([CCC, 16 September 2026](https://www.theccc.org.uk/publication/advice-to-the-uk-government-on-proposed-heathrow-airport-expansion/))
 
-At roughly the same time, I kept watching videos from The B1M about airports that made Heathrow look almost quaint. Dubai is building out Al Maktoum into a five-runway mega-hub. Singapore has started work on Changi Terminal 5. India has built new airports for Delhi and Mumbai. Istanbul opened an enormous new hub in 2018. Hong Kong has just completed a third runway system.
+At roughly the same time, I kept watching videos from The B1M about airports that made Heathrow look almost quaint, including its films on [Dubai’s Al Maktoum expansion](https://www.theb1m.com/video/dubai-is-building-the-world-s-biggest-airport) and [Singapore’s Changi Airport](https://www.theb1m.com/video/why-the-worlds-most-beautiful-airport-doesnt-collapse). Dubai is building out Al Maktoum into a five-runway mega-hub. Singapore has started work on Changi Terminal 5. India has built new airports for Delhi and Mumbai. Istanbul opened an enormous new hub in 2018. Hong Kong has just completed a third runway system.
 
 This seemed odd. Britain was having an exquisitely detailed argument about whether one more runway could fit inside a carbon budget, while much of the world appeared to be pouring concrete.
 
