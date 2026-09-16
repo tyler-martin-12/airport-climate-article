@@ -42,7 +42,7 @@ Austria provides an even stranger case. In 2017 a court rejected Vienna Airport'
 
 Then there is Amsterdam. Schiphol is still investing heavily in its infrastructure, but Dutch governments have also spent years trying to constrain flight numbers, principally around noise and environmental impacts. The exact cap has moved through litigation and politics. The important point is that the policy argument is about how much aviation the hub should accommodate, not simply how efficient the terminal buildings can become.
 
-Norway is a softer version of the same phenomenon. Oslo has safeguarded land for a possible third runway, but Avinor explicitly ties the need and timing of that runway to how aviation develops and decarbonises.
+Norway is a less clear-cut case. [Avinor reports a 2024 committee assessment](https://om.avinor.no/en/innovation/third-runway/progress-plan/) that a third Oslo runway is unlikely to be needed before 2040. That is evidence about capacity and timing, not by itself proof of a climate condition on approval.
 
 So Britain is not uniquely restrictive. If anything, the dataset suggests a broader European pattern: major airport projects are more likely to encounter climate and environmental policy as a constraint on *whether or how much* capacity should be built.
 
@@ -90,7 +90,7 @@ Those positions may turn out to be too optimistic about technology. They may als
 
 Once you move outside Europe, the centre of gravity shifts.
 
-Across developing Asia and the Gulf, airport capacity is usually framed as strategic infrastructure. Delhi's new Noida airport, Navi Mumbai, Beijing Daxing, Hong Kong's third runway system and Istanbul's mega-airport are responses to congestion, urban growth, tourism, trade and hub competition. Dubai's ambition for Al Maktoum is on another scale again.
+In the developing Asian and Gulf projects in this sample, airport capacity is generally framed as strategic infrastructure. Delhi's new Noida airport, Navi Mumbai, Beijing Daxing, Hong Kong's third runway system and Istanbul's mega-airport are responses to congestion, urban growth, tourism, trade and hub competition. Dubai's ambition for Al Maktoum is on another scale again.
 
 Climate policy is not absent from these projects. New airports advertise efficient buildings, solar power, electric ground vehicles and sustainable design. National governments have net-zero or carbon-neutrality pledges. But in most of the cases I reviewed, I found much less evidence that the emissions from the additional flights were allowed to determine whether the capacity should exist.
 
@@ -109,7 +109,7 @@ First, airport decisions are path-dependent. Brisbane's new parallel runway open
 
 Second, "environment" is broader than carbon. Schiphol's constraints are inseparable from noise and local pollution. Vienna's runway litigation involved a particular legal context. Dublin's passenger-cap argument includes surface access and planning conditions. The reviewed coding includes broader environmental gating at Schiphol; it should not be read as a climate-only ranking. Its noise constraint is not equivalent to Britain's carbon-budget test.
 
-That makes the coding conservative. It also produces some awkward cases. Gatwick's Northern Runway was approved inside the same British carbon-budget architecture that makes Heathrow such a difficult case. That is useful evidence, not a bug. A strong climate framework does not mechanically prohibit airport growth. Project scale, demand assumptions, existing capacity, mitigation and the government's wider aviation policy all matter.
+The coding also produces some awkward cases. Gatwick's Northern Runway was approved inside the same British carbon-budget architecture that makes Heathrow such a difficult case. That is useful evidence, not a bug. A strong climate framework does not mechanically prohibit airport growth. Project scale, demand assumptions, existing capacity, mitigation and the government's wider aviation policy all matter.
 
 The categories are therefore best read as a measure of **institutional friction**. At one end, climate is something a project must survive. At the other, it is something the airport is expected to manage while the strategic case for expansion is largely taken as given.
 
@@ -125,7 +125,7 @@ The second was that the apparent global airport boom was misleading, and that ot
 
 Neither is quite right.
 
-Britain has peers. France has cancelled airport capacity on environmental grounds. Dutch policy has tried to constrain Schiphol. Austria has litigated a runway through the climate question. Europe, broadly, does look more willing than Asia or the Gulf to make aviation's externalities part of the capacity decision.
+Britain has peers. France has cancelled airport capacity on environmental grounds. Dutch policy has tried to constrain Schiphol. Austria has litigated a runway through the climate question. Within this sample, Europe does look more willing than Asia or the Gulf to make aviation's externalities part of the capacity decision.
 
 But airport expansion remains widespread even among governments with serious climate commitments. Singapore is the cleanest proof that this is not simply hypocrisy or an absence of policy. It has chosen a different sequencing: protect the hub's growth, then use fuel policy, technology and carbon measures to drive the sector towards net zero.
 

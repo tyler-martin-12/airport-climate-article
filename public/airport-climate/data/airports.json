@@ -296,7 +296,9 @@
     "region": "Europe",
     "longitude": 11.1004,
     "latitude": 60.1939,
-    "coordinate_note": "Approximate airport/project location for map placement; not an analytical field."
+    "coordinate_note": "Approximate airport/project location for map placement; not an analytical field.",
+    "verification_source": "https://om.avinor.no/en/innovation/third-runway/progress-plan/",
+    "verification_note": "The operator reports the 2024 committee assessment that another runway is unlikely to be needed before 2040. This source does not independently establish a decarbonisation condition; the reviewed climate coding remains provisional."
   },
   {
     "id": "vienna-third-runway",
@@ -689,8 +691,8 @@
     "project": "Pearson long-term transformation",
     "expansion_type": "Terminal/airfield enabling",
     "project_type": "Terminal",
-    "status": "Planning/investment",
-    "status_group": "Planning / policy",
+    "status": "Pearson LIFT first major programme construction launched May 2026",
+    "status_group": "Under construction",
     "capacity": "Substantial long-term growth capacity",
     "national_climate_goal": "Canada Net-Zero Emissions Accountability Act 2050",
     "commitment_type": "Target / pledge",
@@ -707,7 +709,9 @@
     "region": "North America",
     "longitude": -79.6306,
     "latitude": 43.6777,
-    "coordinate_note": "Approximate airport/project location for map placement; not an analytical field."
+    "coordinate_note": "Approximate airport/project location for map placement; not an analytical field.",
+    "verification_source": "https://www.torontopearson.com/en/corporate/media/press-releases/2026-05-11",
+    "verification_note": "Operator confirms phased modernisation and expansion, including operational emissions measures. This does not establish climate as an approval constraint; confidence remains Low."
   },
   {
     "id": "yvr-expansion-programme",
@@ -734,7 +738,9 @@
     "region": "North America",
     "longitude": -123.184,
     "latitude": 49.1967,
-    "coordinate_note": "Approximate airport/project location for map placement; not an analytical field."
+    "coordinate_note": "Approximate airport/project location for map placement; not an analytical field.",
+    "verification_source": "https://www.yvr.ca/en/about-yvr/environment/climate",
+    "verification_note": "Current operator target covers net-zero operations by 2030. The broader expansion entry and its climate-constraint coding remain low-confidence; this is not a verified aircraft-emissions target."
   },
   {
     "id": "felipe-ngeles-international-airport",

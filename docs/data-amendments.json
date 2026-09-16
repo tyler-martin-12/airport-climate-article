@@ -88,5 +88,53 @@
     "field": "verification_source",
     "before": null,
     "after": "https://www.faa.gov/general/2021-united-states-aviation-climate-action-plan"
+  },
+  {
+    "id": "oslo-third-runway-optimisation",
+    "field": "verification_source",
+    "before": null,
+    "after": "https://om.avinor.no/en/innovation/third-runway/progress-plan/"
+  },
+  {
+    "id": "oslo-third-runway-optimisation",
+    "field": "verification_note",
+    "before": null,
+    "after": "The operator reports the 2024 committee assessment that another runway is unlikely to be needed before 2040. This source does not independently establish a decarbonisation condition; the reviewed climate coding remains provisional."
+  },
+  {
+    "id": "pearson-long-term-transformation",
+    "field": "status",
+    "before": "Planning/investment",
+    "after": "Pearson LIFT first major programme construction launched May 2026"
+  },
+  {
+    "id": "pearson-long-term-transformation",
+    "field": "status_group",
+    "before": "Planning / policy",
+    "after": "Under construction"
+  },
+  {
+    "id": "pearson-long-term-transformation",
+    "field": "verification_source",
+    "before": null,
+    "after": "https://www.torontopearson.com/en/corporate/media/press-releases/2026-05-11"
+  },
+  {
+    "id": "pearson-long-term-transformation",
+    "field": "verification_note",
+    "before": null,
+    "after": "Operator confirms phased modernisation and expansion, including operational emissions measures. This does not establish climate as an approval constraint; confidence remains Low."
+  },
+  {
+    "id": "yvr-expansion-programme",
+    "field": "verification_source",
+    "before": null,
+    "after": "https://www.yvr.ca/en/about-yvr/environment/climate"
+  },
+  {
+    "id": "yvr-expansion-programme",
+    "field": "verification_note",
+    "before": null,
+    "after": "Current operator target covers net-zero operations by 2030. The broader expansion entry and its climate-constraint coding remain low-confidence; this is not a verified aircraft-emissions target."
   }
 ]

@@ -35,3 +35,11 @@ Competing viewport/content height reporters were replaced by one content-based r
 ## Limitations
 
 Dense world-map clusters remain easier to inspect through Europe zoom or the table/cards. Touch emulation is not evidence of physical-phone or assistive-technology behaviour. Source-link presence was checked for all rows; not every external link was availability-tested. Lower-confidence research and coastline provenance remain documented in FACT-CHECK.md. Screenshots are review artifacts, not production assets.
+
+## Full-prompt acceptance extension
+
+The earlier prompt was truncated after “After inspection.” The completed checklist was subsequently reviewed against the implementation. `tests/extended.cjs`, invoked by the browser suite, now exercises the actual embedded article at all three widths: every filter option; region/type combinations including empty matches; clearing filters; both view switches; desktop marker hover and mobile marker tap; Space/Enter and view-button tab order; all 30 detail panels and their source hrefs; responsive iframe height after resize and detail changes; reduced-motion scroll behaviour; and page-wheel scrolling across the iframe. These are automated Chromium checks, not a full accessibility audit or physical touch-gesture test.
+
+Plain `npm ci` was also run successfully (the original run used `--ignore-scripts`). npm reported 12 vulnerabilities in the inherited dependencies: 1 low, 2 moderate, 8 high, 1 critical. No forced dependency/framework upgrade was made. Review these before exposing a development server; the output here is a static build served only on loopback for testing.
+
+The full-prompt visual review also found and fixed a QA harness defect: the temporary HTTP server originally labelled built CSS as text/plain. It now serves CSS and font MIME types correctly, and the browser test asserts that the article's computed body font includes Lora. Article screenshots were regenerated with the site styles applied. This was a test-server correction, not a production layout change. The article's inline iframe-message script also passed a separate node syntax check.
