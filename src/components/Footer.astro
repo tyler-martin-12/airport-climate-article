@@ -1,0 +1,47 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p class="footer-name">Tyler Alexander Martin</p>
+    <p class="footer-copy">&copy; {year} — temporary article development copy</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--mist);
+    padding: 3rem 2rem;
+    margin-top: 6rem;
+    text-align: center;
+  }
+
+  .footer-name {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--bark);
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .footer-copy {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--dust);
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+</style>

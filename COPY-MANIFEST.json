@@ -1,0 +1,115 @@
+{
+  "source_repository": "tyler-martin-12/my-blog",
+  "source_commit": "6214fa9feecf35246742ee59d1d5353909e7683f",
+  "files": [
+    {
+      "source": "src/layouts/BlogPost.astro",
+      "destination": "src/layouts/BlogPost.astro",
+      "adaptation": "Copied unchanged",
+      "source_sha256": "18eadc307b53abb173326472ec8cad0a424f6fc7408e6e5da6856dbe6e063ec8",
+      "output_sha256": "18eadc307b53abb173326472ec8cad0a424f6fc7408e6e5da6856dbe6e063ec8"
+    },
+    {
+      "source": "src/layouts/Base.astro",
+      "destination": "src/layouts/Base.astro",
+      "adaptation": "Copied unchanged",
+      "source_sha256": "3ed5e7adad00633596766eeda6e7657593bed8f0f016e6a5ad401e5a541ad81c",
+      "output_sha256": "3ed5e7adad00633596766eeda6e7657593bed8f0f016e6a5ad401e5a541ad81c"
+    },
+    {
+      "source": "src/styles/global.css",
+      "destination": "src/styles/global.css",
+      "adaptation": "Copied unchanged",
+      "source_sha256": "ed85ea07a909d87a54f61dc6e0a8f841dc713f7e87fab62ff8d880ba86252537",
+      "output_sha256": "ed85ea07a909d87a54f61dc6e0a8f841dc713f7e87fab62ff8d880ba86252537"
+    },
+    {
+      "source": "src/env.d.ts",
+      "destination": "src/env.d.ts",
+      "adaptation": "Copied unchanged",
+      "source_sha256": "cc719d1ef0609cd73ab9d19df5df62df8a3f84bed76b9e6b0ae1f669c67a1ff8",
+      "output_sha256": "cc719d1ef0609cd73ab9d19df5df62df8a3f84bed76b9e6b0ae1f669c67a1ff8"
+    },
+    {
+      "source": "tsconfig.json",
+      "destination": "tsconfig.json",
+      "adaptation": "Copied unchanged",
+      "source_sha256": "974b0a3b37e52f3649d9df63e72e374794e9e797c8ae61eca4812f844406f7ef",
+      "output_sha256": "974b0a3b37e52f3649d9df63e72e374794e9e797c8ae61eca4812f844406f7ef"
+    },
+    {
+      "source": "public/favicon.svg",
+      "destination": "public/favicon.svg",
+      "adaptation": "Copied unchanged",
+      "source_sha256": "7d3d084b1c43749eaa5f6e079e3ad6d984f2e1f849bdde773ead4da88a8bd034",
+      "output_sha256": "7d3d084b1c43749eaa5f6e079e3ad6d984f2e1f849bdde773ead4da88a8bd034"
+    },
+    {
+      "source": "public/vegan-effort-dashboard.html",
+      "destination": "public/vegan-effort-dashboard.html",
+      "adaptation": "Copied unchanged",
+      "source_sha256": "a9927c2afe38d6c49b44dba03c67f98c1bbf33972df8198603741fea37cd3ed5",
+      "output_sha256": "a9927c2afe38d6c49b44dba03c67f98c1bbf33972df8198603741fea37cd3ed5"
+    },
+    {
+      "source": "src/pages/blog/where-to-start.md",
+      "destination": "src/pages/blog/where-to-start.md",
+      "adaptation": "Published article; image references and links to omitted articles point to the public production site. No images copied.",
+      "source_sha256": "339647cf9252026c6fc227328fa73dc0d9bdebb81dbc5e0cc13f6ccef6aa0530",
+      "output_sha256": "1bcee0f5f39f54d03bbec493c487abfe5f3dbaf3ac01d10fcd0761d8cafb3ce4"
+    },
+    {
+      "source": "src/pages/blog/london-in-three-dimensions.md",
+      "destination": "src/pages/blog/london-in-three-dimensions.md",
+      "adaptation": "Published article; image references and links to omitted articles point to the public production site. No images copied.",
+      "source_sha256": "5ab9faf5603cf4e23359c3d2b2fa594dfa4b7422a81e48889b370356ac2c7f54",
+      "output_sha256": "2419002e043c63f8c3d91ed55a3ffc76855fe2d28cdad1dff1b8ebd4225e72ec"
+    },
+    {
+      "source": "src/pages/blog/honest-price-of-a-flight.md",
+      "destination": "src/pages/blog/honest-price-of-a-flight.md",
+      "adaptation": "Published article; image references and links to omitted articles point to the public production site. No images copied.",
+      "source_sha256": "095efde16627e4d4007455f766bb8d19f352c87eb5cb264ca1a402234ba2b465",
+      "output_sha256": "b233b276973ef9847de86dafa0219fa99599ea658dfe9a72efa7724947fe3a92"
+    },
+    {
+      "source": "src/components/Nav.astro",
+      "destination": "src/components/Nav.astro",
+      "adaptation": "Workshop title; only Home and Writing links retained; original styling retained.",
+      "source_sha256": "2b7486079cba2baf66beb192ca3702f8f79baa27334b9e340af3eb954ce0548b",
+      "output_sha256": "4f55145e6eefc30ce70a3545961cb136307d3a0821604b87c84f9a11e7e9ce6e"
+    },
+    {
+      "source": "src/components/Footer.astro",
+      "destination": "src/components/Footer.astro",
+      "adaptation": "Removed subscription form/import and external profile links; retained visual styling.",
+      "source_sha256": "55fe7868c335abf6eab3e4b8ed9815e7aa88836976f8d695c6c26f6dcfc18588",
+      "output_sha256": "c953d8a31d7710bd1315fed161aab6c8c46ee6ced799c0e024ec2d2f14dd54f9"
+    },
+    {
+      "source": "public/threshold-3d/index.html",
+      "destination": "public/threshold-3d/index.html",
+      "adaptation": "Removed both embedded housing datasets (empty GeoJSON collections); added explicit reference-only banner. MapLibre controls and integration retained.",
+      "source_sha256": "de869bcd3e4d45105063a0a8f827b6d6334e745b6625b499f1ecc2d6eaed2250",
+      "output_sha256": "86e2cb29ea22257e104de03cb8213c234ed9114d446e0fa944bfccb096ea63c4"
+    }
+  ],
+  "other_adaptations": [
+    "STYLE.md: relevant essay/visual guidance only",
+    "package.json: removed newsletter command; renamed and private npm package",
+    "package-lock.json: preserved dependency versions; renamed root package",
+    "astro.config.mjs: removed production site URL"
+  ],
+  "new_files": [
+    "README.md",
+    "AGENTS.md",
+    ".gitignore",
+    "src/pages/index.astro",
+    "src/pages/blog/index.astro",
+    "src/pages/blog/airport-climate.md",
+    "public/airport-climate/index.html",
+    "public/airport-climate/resize.js",
+    "public/airport-climate/data/airports.json",
+    "public/airport-climate/data/README.md"
+  ]
+}

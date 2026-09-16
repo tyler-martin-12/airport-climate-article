@@ -1,0 +1,68 @@
+---
+const currentPath = Astro.url.pathname;
+const isActive = (path: string) => currentPath === path || (path !== '/' && currentPath.startsWith(path));
+---
+
+<nav class="nav">
+  <a href="/" class="nav-logo">Article workshop</a>
+  <ul class="nav-links">
+    <li><a href="/" class:list={["nav-link", { active: currentPath === '/' }]}>Home</a></li>
+    <li><a href="/blog" class:list={["nav-link", { active: isActive('/blog') }]}>Writing</a></li>
+  </ul>
+</nav>
+
+<style>
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: var(--nav-height);
+    border-bottom: 1px solid var(--mist);
+    position: sticky;
+    top: 0;
+    background: rgba(250, 246, 240, 0.92);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-logo:hover { opacity: 0.8; }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-link {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--bark);
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--rust);
+    border-bottom-color: var(--rust);
+    opacity: 1;
+  }
+
+  @media (max-width: 500px) {
+    .nav { padding: 0 1rem; }
+    .nav-links { gap: 1.2rem; }
+  }
+</style>

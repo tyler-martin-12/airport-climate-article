@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dietary shift trade-off dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Palette mirrors the blog's global.css :root so the embed does not read
+       as a foreign widget. Series colours are blue / orange / violet, never a
+       red-green pair, and every series also carries a distinct dash pattern
+       and marker shape so hue is never the only channel. */
+    :root {
+      --cream: #faf6f0;
+      --warm-white: #fff9f2;
+      --ink: #1a1208;
+      --bark: #3d2b1f;
+      --rust: #b85c38;
+      --dust: #c9b49a;
+      --mist: #e8ddd0;
+      --muted: #6f6155;
+      --grid: #efe6da;
+      --climate: #1d4e89;
+      --health: #c96a1f;
+      --welfare: #5b4b8a;
+      --best: #f3e7d0;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Lora', Georgia, serif;
+      --font-mono: 'DM Mono', ui-monospace, monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 1.75rem 1.25rem 2.25rem; }
+
+    header { border-bottom: 1px solid var(--mist); padding-bottom: 1.1rem; }
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.35rem, 3.4vw, 1.85rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+    header p { margin-top: 0.45rem; font-size: 0.9rem; color: var(--muted); max-width: 46em; }
+
+    .panel {
+      background: var(--warm-white);
+      border: 1px solid var(--mist);
+      border-radius: 12px;
+      padding: 1.15rem 1.25rem 1.35rem;
+    }
+    .stack { display: flex; flex-direction: column; gap: 1.1rem; margin-top: 1.4rem; }
+    .duo { display: grid; gap: 1.1rem; }
+    @media (min-width: 900px) { .duo { grid-template-columns: 1fr 1fr; } }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: 1.02rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+    .sub { margin-top: 0.2rem; font-size: 0.82rem; color: var(--muted); }
+    .panel-head { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: flex-start; justify-content: space-between; }
+
+    /* Controls */
+    .controls { display: grid; gap: 1rem 1.4rem; }
+    @media (min-width: 700px) { .controls { grid-template-columns: repeat(3, 1fr); } }
+    .control-label { display: flex; justify-content: space-between; align-items: baseline; gap: 0.6rem; }
+    .control-label span:first-child { font-size: 0.86rem; font-weight: 500; }
+    .control-label span:last-child { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+    input[type="range"] {
+      -webkit-appearance: none; appearance: none;
+      width: 100%; height: 4px; margin-top: 0.55rem;
+      background: var(--mist); border-radius: 999px; cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none; appearance: none;
+      width: 17px; height: 17px; border-radius: 50%;
+      background: var(--bark); border: 2px solid var(--warm-white);
+      box-shadow: 0 1px 3px rgba(26,18,8,0.25);
+    }
+    input[type="range"]::-moz-range-thumb {
+      width: 17px; height: 17px; border-radius: 50%;
+      background: var(--bark); border: 2px solid var(--warm-white);
+    }
+    input[type="range"]:focus-visible { outline: 2px solid var(--rust); outline-offset: 3px; }
+    .control-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; margin-top: 1.1rem; }
+    .note { font-size: 0.78rem; color: var(--muted); }
+    button {
+      font-family: var(--font-body); font-size: 0.83rem; color: var(--bark);
+      background: transparent; border: 1px solid var(--dust); border-radius: 999px;
+      padding: 0.4rem 0.95rem; cursor: pointer; transition: border-color 0.15s, color 0.15s;
+    }
+    button:hover { border-color: var(--rust); color: var(--rust); }
+    button:focus-visible { outline: 2px solid var(--rust); outline-offset: 2px; }
+
+    /* Legend */
+    .legend { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; }
+    .legend button { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.3rem 0.7rem; font-size: 0.79rem; }
+    .legend button[aria-pressed="false"] { color: var(--muted); border-color: var(--mist); opacity: 0.65; }
+    .legend svg { display: block; overflow: visible; }
+
+    svg.chart { display: block; width: 100%; height: auto; }
+    .readout {
+      font-family: var(--font-mono); font-size: 0.76rem; color: var(--muted);
+      font-variant-numeric: tabular-nums; text-align: right; min-height: 1.2em;
+    }
+
+    /* Marginal-gain bars: CSS rather than SVG so they reflow on a phone. */
+    .bars { display: flex; flex-direction: column; gap: 0.3rem; margin-top: 0.9rem; }
+    .bar-row {
+      display: grid; grid-template-columns: minmax(0, 8.6em) 1fr 3.1em;
+      align-items: center; gap: 0.6rem;
+      padding: 0.22rem 0.3rem; border-radius: 6px; cursor: default;
+      transition: background-color 0.15s;
+    }
+    .bar-row.is-best { background: var(--best); }
+    .bar-row.is-hovered { background: var(--mist); }
+    .bar-name { font-size: 0.79rem; line-height: 1.25; }
+    .bar-track { height: 15px; background: var(--grid); border-radius: 3px; overflow: hidden; }
+    .bar-fill { height: 100%; background: var(--bark); border-radius: 3px; }
+    .bar-fill.is-dominated {
+      background: repeating-linear-gradient(135deg, var(--dust) 0 4px, transparent 4px 8px);
+      box-shadow: inset 0 0 0 1px var(--dust);
+    }
+    .bar-value { font-family: var(--font-mono); font-size: 0.76rem; text-align: right; font-variant-numeric: tabular-nums; }
+    .bar-value.is-dominated { color: var(--muted); font-style: italic; }
+
+    /* Table */
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 0.8rem; }
+    caption { text-align: left; padding-bottom: 0.75rem; }
+    th, td { padding: 0.5rem 0.6rem; white-space: nowrap; }
+    thead th {
+      font-family: var(--font-body); font-weight: 500; font-size: 0.74rem;
+      text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted);
+      border-bottom: 1px solid var(--mist); text-align: right;
+    }
+    thead th:first-child, thead th:nth-child(2) { text-align: left; }
+    tbody tr { border-bottom: 1px solid var(--grid); transition: background-color 0.15s; }
+    tbody tr:last-child { border-bottom: 0; }
+    tbody tr.is-best { background: var(--best); }
+    tbody tr.is-hovered { background: var(--mist); }
+    tbody td { text-align: right; font-family: var(--font-mono); font-variant-numeric: tabular-nums; color: var(--bark); }
+    tbody td.name { text-align: left; font-family: var(--font-body); color: var(--ink); white-space: normal; min-width: 10em; }
+    tbody td.num-strong { color: var(--ink); font-weight: 500; }
+    tbody td.dominated { color: var(--muted); font-style: italic; font-family: var(--font-body); }
+    .group-head th { font-size: 0.7rem; letter-spacing: 0.06em; }
+
+    footer { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--mist); font-size: 0.78rem; color: var(--muted); }
+    footer p + p { margin-top: 0.4rem; }
+    .key-dominated { display: inline-block; width: 1.6em; height: 0.62em; vertical-align: -0.05em; border-radius: 2px; background: repeating-linear-gradient(135deg, var(--dust) 0 4px, transparent 4px 8px); box-shadow: inset 0 0 0 1px var(--dust); }
+    .key-best { display: inline-block; width: 1.6em; height: 0.62em; vertical-align: -0.05em; border-radius: 2px; background: var(--best); box-shadow: inset 0 0 0 1px var(--dust); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Incremental dietary shift: impact against effort</h1>
+      <p>
+        An eight-step ladder from an average Western diet to strict vegan. Every step is scored 0 to 100 on
+        three impact axes and three effort axes, where 0 is the baseline diet and 100 is strict vegan.
+        Move the sliders to reweight the impact axes and watch which steps hold their value.
+      </p>
+    </header>
+
+    <div class="stack">
+      <section class="panel">
+        <h2>Impact weights</h2>
+        <p class="sub">The three weights always sum to 100. Raising one lowers the others proportionally.</p>
+        <div id="controls" class="controls" style="margin-top: 1rem;"></div>
+        <div class="control-foot">
+          <p class="note">Aggregate impact is the weighted average of the three impact axes. Average effort is the unweighted mean of the three effort axes.</p>
+          <button id="reset" type="button">Reset to equal weights</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>The trade-off curve</h2>
+            <p class="sub">Aggregate impact against average effort. Steps are ordered by effort, so up and to the left is better value.</p>
+          </div>
+          <p id="readout" class="readout"></p>
+        </div>
+        <svg id="curve" class="chart" role="img" aria-labelledby="curve-title"><title id="curve-title">Aggregate impact plotted against average effort for each step of the dietary ladder</title></svg>
+      </section>
+
+      <div class="duo">
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>Impact components</h2>
+              <p class="sub">Climate, health and welfare scores against average effort.</p>
+            </div>
+          </div>
+          <div id="legend" class="legend"></div>
+          <svg id="components" class="chart" role="img" aria-labelledby="components-title" style="margin-top: 0.6rem;"><title id="components-title">Climate, health and welfare scores plotted against average effort</title></svg>
+        </section>
+
+        <section class="panel">
+          <h2>Marginal gain per unit effort</h2>
+          <p class="sub">Impact gained divided by effort added, measured against the last step that was actually worth taking.</p>
+          <div id="bars" class="bars"></div>
+        </section>
+      </div>
+
+      <section class="panel">
+        <div class="table-scroll">
+          <table>
+            <caption class="sub">All scores. Hover or tap a row to highlight it in the charts.</caption>
+            <thead>
+              <tr>
+                <th scope="col" rowspan="2">Step</th>
+                <th scope="col" rowspan="2">Diet</th>
+                <th scope="col" colspan="4" class="group-head" style="text-align:right;">Impact</th>
+                <th scope="col" colspan="4" class="group-head" style="text-align:right;">Effort</th>
+                <th scope="col" colspan="3" class="group-head" style="text-align:right;">Margin</th>
+              </tr>
+              <tr>
+                <th scope="col">Climate</th><th scope="col">Health</th><th scope="col">Welfare</th><th scope="col">Agg.</th>
+                <th scope="col">Cognitive</th><th scope="col">Social</th><th scope="col">Adherence</th><th scope="col">Avg</th>
+                <th scope="col">&Delta; impact</th><th scope="col">&Delta; effort</th><th scope="col">Gain / effort</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p><span class="key-best"></span> Best marginal gain per unit effort at the current weights. <span class="key-dominated"></span> Dominated: costs more effort than an earlier step without delivering more impact, so the ladder is better off skipping it.</p>
+      <p>Marginal gain is measured against the previous <em>non-dominated</em> step rather than the previous row, so skipping a dominated rung does not distort the step that follows it.</p>
+      <p>Scores are estimates, not measurements. The ordering is defensible; the exact numbers are not.</p>
+    </footer>
+  </div>
+
+  <script>
+    /* Nine rungs: a baseline plus eight steps.
+       "No red meat" and the old "chicken and fish only" rung were the same diet
+       under two names (dropping beef, lamb and pork leaves poultry and fish),
+       so they are merged here into a single step at the midpoint of the two
+       original score sets.
+
+       Pescatarian was rescored down on climate (68 -> 56) and welfare (58 -> 40).
+       Farmed fish is around 13.6 kg CO2e/kg against poultry's 9.9, so trading
+       chicken for fish is not a climate gain, and fish carry a far higher
+       individual death count per kilogram than any land animal. Dropping
+       poultry is a real welfare win; the added fish burden largely cancels it.
+       Health is left alone: pescatarian diets do well in the cohort evidence. */
+    const STEPS = [
+      { id: 0, name: "Baseline Western",        short: "Baseline",       climate: 0,   health: 0,  welfare: 0,   cognitive: 0,  social: 0,  adherence: 0 },
+      { id: 1, name: "Weekday vegetarian",      short: "Weekday veg",    climate: 22,  health: 15, welfare: 20,  cognitive: 15, social: 10, adherence: 25 },
+      { id: 2, name: "No beef or lamb",         short: "No beef/lamb",   climate: 40,  health: 22, welfare: 25,  cognitive: 20, social: 15, adherence: 22 },
+      { id: 3, name: "No red meat",             short: "No red meat",    climate: 52,  health: 34, welfare: 38,  cognitive: 23, social: 21, adherence: 26 },
+      { id: 4, name: "Pescatarian",             short: "Pescatarian",    climate: 56,  health: 55, welfare: 40,  cognitive: 38, social: 42, adherence: 38 },
+      { id: 5, name: "Vegetarian",              short: "Vegetarian",     climate: 78,  health: 70, welfare: 72,  cognitive: 48, social: 55, adherence: 42 },
+      { id: 6, name: "Vegan at home (flexible)", short: "Vegan at home", climate: 95,  health: 78, welfare: 95,  cognitive: 70, social: 55, adherence: 45 },
+      { id: 7, name: "Low-dairy vegetarian",    short: "Low-dairy veg",  climate: 88,  health: 80, welfare: 85,  cognitive: 60, social: 65, adherence: 55 },
+      { id: 8, name: "Strict vegan",            short: "Strict vegan",   climate: 100, health: 75, welfare: 100, cognitive: 85, social: 90, adherence: 75 },
+    ];
+
+    const IMPACT_KEYS = ["climate", "health", "welfare"];
+    const SERIES = {
+      climate: { label: "Climate", colour: "var(--climate)", hex: "#1d4e89", dash: "none",  marker: "circle" },
+      health:  { label: "Health",  colour: "var(--health)",  hex: "#c96a1f", dash: "7 4",   marker: "square" },
+      welfare: { label: "Welfare", colour: "var(--welfare)", hex: "#5b4b8a", dash: "2 3.5", marker: "triangle" },
+    };
+    const WEIGHT_LABELS = { climate: "Climate weight", health: "Health weight", welfare: "Welfare weight" };
+    const INK = "#1a1208", BARK = "#3d2b1f", RUST = "#b85c38", MUTED = "#6f6155", GRID = "#efe6da", DUST = "#c9b49a";
+
+    const state = {
+      weights: { climate: 100 / 3, health: 100 / 3, welfare: 100 / 3 },
+      visible: { climate: true, health: true, welfare: true },
+      hovered: null,
+    };
+
+    const el = {
+      controls: document.getElementById("controls"),
+      reset: document.getElementById("reset"),
+      curve: document.getElementById("curve"),
+      components: document.getElementById("components"),
+      legend: document.getElementById("legend"),
+      bars: document.getElementById("bars"),
+      tbody: document.getElementById("tbody"),
+      readout: document.getElementById("readout"),
+    };
+
+    const fmt = (v) => (Math.round(v * 10) / 10).toFixed(1);
+    const fmt2 = (v) => (Math.round(v * 100) / 100).toFixed(2);
+    const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+
+    function reweight(key, next) {
+      const value = clamp(next, 0, 100);
+      const out = { ...state.weights, [key]: value };
+      const others = IMPACT_KEYS.filter((k) => k !== key);
+      const remaining = 100 - value;
+      const total = others.reduce((s, k) => s + state.weights[k], 0);
+      if (total <= 0) {
+        others.forEach((k) => { out[k] = remaining / others.length; });
+      } else {
+        others.forEach((k) => { out[k] = (state.weights[k] / total) * remaining; });
+      }
+      return out;
+    }
+
+    /* Marginal gain is measured against the last step that was worth taking.
+       A dominated rung does not become the new reference point, otherwise the
+       step after it inherits an artificially cheap comparison. */
+    function computeRows() {
+      const base = STEPS.map((step) => ({
+        ...step,
+        aggImpact:
+          (state.weights.climate / 100) * step.climate +
+          (state.weights.health / 100) * step.health +
+          (state.weights.welfare / 100) * step.welfare,
+        avgEffort: (step.cognitive + step.social + step.adherence) / 3,
+      }));
+
+      let anchor = base[0];
+      return base.map((row, i) => {
+        if (i === 0) {
+          return { ...row, deltaImpact: null, deltaEffort: null, mgpe: null, dominated: false, anchorName: null };
+        }
+        const deltaImpact = row.aggImpact - anchor.aggImpact;
+        const deltaEffort = row.avgEffort - anchor.avgEffort;
+        const dominated = deltaImpact <= 1e-9;
+        const scored = !dominated && deltaEffort > 1e-9;
+        const out = {
+          ...row,
+          deltaImpact,
+          deltaEffort,
+          mgpe: scored ? deltaImpact / deltaEffort : null,
+          dominated,
+          anchorName: anchor.short,
+        };
+        if (!dominated) anchor = base[i];
+        return out;
+      });
+    }
+
+    const bestId = (rows) => rows.reduce(
+      (best, r) => (r.mgpe !== null && (best === null || r.mgpe > best.mgpe) ? r : best), null
+    )?.id ?? null;
+
+    const svgNode = (name, attrs = {}) => {
+      const node = document.createElementNS("http://www.w3.org/2000/svg", name);
+      for (const [k, v] of Object.entries(attrs)) node.setAttribute(k, v);
+      return node;
+    };
+
+    function marker(kind, x, y, r, fill, opacity) {
+      const attrs = { fill, "fill-opacity": opacity, stroke: "#fff9f2", "stroke-width": 1.4 };
+      if (kind === "square") return svgNode("rect", { x: x - r, y: y - r, width: r * 2, height: r * 2, rx: 0.8, ...attrs });
+      if (kind === "triangle") {
+        const h = r * 1.25;
+        return svgNode("polygon", { points: `${x},${y - h} ${x + h},${y + h * 0.72} ${x - h},${y + h * 0.72}`, ...attrs });
+      }
+      return svgNode("circle", { cx: x, cy: y, r, ...attrs });
+    }
+
+    /* Narrow screens get their own viewBox rather than a scaled-down wide one,
+       so axis text keeps a usable size on a phone instead of shrinking with the
+       drawing. */
+    function geometry(svg) {
+      const width = svg.parentElement.clientWidth || 720;
+      const narrow = width < 540;
+      return narrow
+        ? { w: 400, h: 430, m: { top: 20, right: 16, bottom: 58, left: 50 }, narrow, fs: 12.5 }
+        : { w: 740, h: 430, m: { top: 20, right: 24, bottom: 58, left: 58 }, narrow, fs: 11.5 };
+    }
+
+    function drawFrame(svg, geo, labels) {
+      svg.innerHTML = "";
+      svg.setAttribute("viewBox", `0 0 ${geo.w} ${geo.h}`);
+      // Clearing innerHTML drops the <title> the static markup points at with
+      // aria-labelledby, so the replacement has to carry the same id.
+      const title = svgNode("title", { id: `${svg.id}-title` });
+      title.textContent = labels.title;
+      svg.appendChild(title);
+
+      const iw = geo.w - geo.m.left - geo.m.right;
+      const ih = geo.h - geo.m.top - geo.m.bottom;
+      const xs = (v) => geo.m.left + (v / 100) * iw;
+      const ys = (v) => geo.m.top + ih - (v / 100) * ih;
+      const step = geo.narrow ? 25 : 20;
+
+      for (let t = 0; t <= 100; t += step) {
+        svg.appendChild(svgNode("line", { x1: xs(t), y1: geo.m.top, x2: xs(t), y2: geo.m.top + ih, stroke: GRID }));
+        svg.appendChild(svgNode("line", { x1: geo.m.left, y1: ys(t), x2: geo.m.left + iw, y2: ys(t), stroke: GRID }));
+        const xt = svgNode("text", { x: xs(t), y: geo.h - geo.m.bottom + 20, "text-anchor": "middle", fill: MUTED, "font-size": geo.fs });
+        xt.textContent = t;
+        svg.appendChild(xt);
+        const yt = svgNode("text", { x: geo.m.left - 10, y: ys(t) + 4, "text-anchor": "end", fill: MUTED, "font-size": geo.fs });
+        yt.textContent = t;
+        svg.appendChild(yt);
+      }
+
+      svg.appendChild(svgNode("line", { x1: geo.m.left, y1: geo.m.top, x2: geo.m.left, y2: geo.m.top + ih, stroke: DUST, "stroke-width": 1.2 }));
+      svg.appendChild(svgNode("line", { x1: geo.m.left, y1: geo.m.top + ih, x2: geo.m.left + iw, y2: geo.m.top + ih, stroke: DUST, "stroke-width": 1.2 }));
+
+      const xa = svgNode("text", { x: geo.m.left + iw / 2, y: geo.h - 10, "text-anchor": "middle", fill: BARK, "font-size": geo.fs + 1 });
+      xa.textContent = labels.x;
+      svg.appendChild(xa);
+      const ya = svgNode("text", { x: 14, y: geo.m.top + ih / 2, transform: `rotate(-90 14 ${geo.m.top + ih / 2})`, "text-anchor": "middle", fill: BARK, "font-size": geo.fs + 1 });
+      ya.textContent = labels.y;
+      svg.appendChild(ya);
+
+      return { xs, ys, iw, ih };
+    }
+
+    function bindHover(node, id) {
+      const on = () => { state.hovered = id; render(); };
+      const off = () => { state.hovered = null; render(); };
+      node.addEventListener("mouseenter", on);
+      node.addEventListener("mouseleave", off);
+      node.addEventListener("focus", on);
+      node.addEventListener("blur", off);
+      // Passive, and no preventDefault: a tap selects the step but the page and
+      // the horizontally scrollable table must still scroll normally.
+      node.addEventListener("touchstart", on, { passive: true });
+    }
+
+    function drawCurve(rows) {
+      const geo = geometry(el.curve);
+      const { xs, ys } = drawFrame(el.curve, geo, {
+        x: "Average effort", y: "Aggregate impact",
+        title: "Aggregate impact plotted against average effort for each step of the dietary ladder",
+      });
+
+      /* The frontier is the path through non-dominated steps only; dominated
+         rungs hang off it on a dashed spur so the backward kink reads as
+         deliberate rather than as a plotting error. */
+      const frontier = rows.filter((r) => !r.dominated);
+      el.curve.appendChild(svgNode("polyline", {
+        fill: "none", stroke: BARK, "stroke-width": 2.2, "stroke-linecap": "round", "stroke-linejoin": "round",
+        points: frontier.map((r) => `${xs(r.avgEffort)},${ys(r.aggImpact)}`).join(" "),
+      }));
+
+      rows.filter((r) => r.dominated).forEach((r) => {
+        const prev = frontier.filter((f) => f.avgEffort < r.avgEffort).pop();
+        if (!prev) return;
+        el.curve.appendChild(svgNode("line", {
+          x1: xs(prev.avgEffort), y1: ys(prev.aggImpact), x2: xs(r.avgEffort), y2: ys(r.aggImpact),
+          stroke: DUST, "stroke-width": 1.6, "stroke-dasharray": "4 4",
+        }));
+      });
+
+      // Nudge labels apart vertically so nothing overlaps at any weighting.
+      const layout = rows.map((r) => {
+        const x = xs(r.avgEffort), y = ys(r.aggImpact);
+        const flip = x > geo.w * 0.68;
+        return {
+          id: r.id, x, y,
+          lx: x + (flip ? -9 : 9),
+          anchor: flip ? "end" : "start",
+          want: y + (r.id % 2 === 0 ? -9 : 15),
+          at: 0,
+        };
+      }).sort((a, b) => a.want - b.want);
+
+      const gap = geo.narrow ? 15 : 17;
+      layout.forEach((it, i) => {
+        it.at = i === 0 ? Math.max(it.want, geo.m.top + 10) : Math.max(it.want, layout[i - 1].at + gap);
+      });
+      for (let i = layout.length - 1; i >= 0; i -= 1) {
+        const limit = layout[i + 1] ? layout[i + 1].at - gap : geo.h - geo.m.bottom - 4;
+        layout[i].at = Math.min(layout[i].at, limit);
+      }
+      const byId = Object.fromEntries(layout.map((it) => [it.id, it]));
+
+      rows.forEach((r) => {
+        const pos = byId[r.id];
+        const hot = state.hovered === r.id;
+        const g = svgNode("g", { tabindex: "0", role: "button", "aria-label": `${r.name}: impact ${fmt(r.aggImpact)}, effort ${fmt(r.avgEffort)}`, style: "cursor:pointer" });
+
+        g.appendChild(svgNode("line", {
+          x1: pos.x, y1: pos.y, x2: pos.lx + (pos.anchor === "end" ? 3 : -3), y2: pos.at - 4,
+          stroke: hot ? RUST : DUST, "stroke-width": 1,
+        }));
+        g.appendChild(svgNode("circle", { cx: pos.x, cy: pos.y, r: 15, fill: "transparent" }));
+        g.appendChild(svgNode("circle", {
+          cx: pos.x, cy: pos.y, r: hot ? 6.5 : 5,
+          fill: r.dominated ? "#fff9f2" : (hot ? RUST : INK),
+          stroke: hot ? RUST : (r.dominated ? DUST : "#fff9f2"),
+          "stroke-width": r.dominated ? 2 : 1.8,
+        }));
+
+        const label = svgNode("text", {
+          x: pos.lx, y: pos.at, "text-anchor": pos.anchor,
+          fill: hot ? RUST : (r.dominated ? MUTED : BARK),
+          "font-size": geo.narrow ? 12 : 11.5,
+          "font-weight": hot ? 600 : 400,
+          "font-style": r.dominated ? "italic" : "normal",
+        });
+        // On a phone there is no room for names; the numbered table carries them.
+        label.textContent = geo.narrow ? String(r.id) : r.short;
+        g.appendChild(label);
+
+        bindHover(g, r.id);
+        el.curve.appendChild(g);
+      });
+    }
+
+    function drawComponents(rows) {
+      const geo = geometry(el.components);
+      const { xs, ys } = drawFrame(el.components, geo, {
+        x: "Average effort", y: "Component score",
+        title: "Climate, health and welfare scores plotted against average effort",
+      });
+
+      IMPACT_KEYS.forEach((key) => {
+        if (!state.visible[key]) return;
+        const meta = SERIES[key];
+        const line = svgNode("polyline", {
+          fill: "none", stroke: meta.hex, "stroke-width": 2, "stroke-linecap": "round", "stroke-linejoin": "round",
+          points: rows.map((r) => `${xs(r.avgEffort)},${ys(r[key])}`).join(" "),
+        });
+        if (meta.dash !== "none") line.setAttribute("stroke-dasharray", meta.dash);
+        el.components.appendChild(line);
+      });
+
+      rows.forEach((r) => {
+        IMPACT_KEYS.forEach((key) => {
+          if (!state.visible[key]) return;
+          const meta = SERIES[key];
+          const hot = state.hovered === r.id;
+          const g = svgNode("g", { tabindex: "0", role: "button", "aria-label": `${r.name}, ${meta.label} ${fmt(r[key])}`, style: "cursor:pointer" });
+          g.appendChild(marker(meta.marker, xs(r.avgEffort), ys(r[key]), hot ? 5.4 : 4, meta.hex, hot ? 1 : 0.85));
+          bindHover(g, r.id);
+          el.components.appendChild(g);
+        });
+      });
+
+      // Hovering a step shows that step's three values, not its name repeated
+      // once per series.
+      if (state.hovered !== null) {
+        const row = rows.find((r) => r.id === state.hovered);
+        const x = xs(row.avgEffort);
+        const flip = x > geo.w * 0.66;
+        const entries = IMPACT_KEYS.filter((k) => state.visible[k])
+          .map((k) => ({ y: ys(row[k]), text: `${SERIES[k].label} ${fmt(row[k])}`, hex: SERIES[k].hex }))
+          .sort((a, b) => a.y - b.y);
+        entries.forEach((e, i) => {
+          if (i > 0 && e.y - entries[i - 1].y < 14) e.y = entries[i - 1].y + 14;
+        });
+        entries.forEach((e) => {
+          const t = svgNode("text", {
+            x: x + (flip ? -10 : 10), y: e.y + 4, "text-anchor": flip ? "end" : "start",
+            fill: e.hex, "font-size": geo.narrow ? 11.5 : 11, "font-weight": 600,
+          });
+          t.textContent = e.text;
+          el.components.appendChild(t);
+        });
+      }
+    }
+
+    function drawBars(rows, best) {
+      el.bars.innerHTML = "";
+      const scored = rows.filter((r) => r.mgpe !== null);
+      const max = scored.length ? Math.max(...scored.map((r) => r.mgpe)) : 1;
+
+      rows.slice(1).forEach((r) => {
+        const row = document.createElement("div");
+        row.className = "bar-row";
+        if (r.id === best) row.classList.add("is-best");
+        if (state.hovered === r.id) row.classList.add("is-hovered");
+
+        const name = document.createElement("div");
+        name.className = "bar-name";
+        name.textContent = r.short;
+
+        const track = document.createElement("div");
+        track.className = "bar-track";
+        const fill = document.createElement("div");
+        fill.className = "bar-fill";
+        if (r.dominated) {
+          fill.classList.add("is-dominated");
+          fill.style.width = "100%";
+        } else {
+          fill.style.width = `${Math.max((r.mgpe / max) * 100, 1.5)}%`;
+        }
+        track.appendChild(fill);
+
+        const value = document.createElement("div");
+        value.className = "bar-value";
+        if (r.dominated) {
+          value.classList.add("is-dominated");
+          value.textContent = "skip";
+          row.title = `${r.name} costs more effort than ${r.anchorName} without adding impact`;
+        } else {
+          value.textContent = fmt2(r.mgpe);
+          row.title = `${r.name}: +${fmt(r.deltaImpact)} impact for +${fmt(r.deltaEffort)} effort, measured from ${r.anchorName}`;
+        }
+
+        row.append(name, track, value);
+        bindHover(row, r.id);
+        el.bars.appendChild(row);
+      });
+    }
+
+    function drawTable(rows, best) {
+      el.tbody.innerHTML = "";
+      rows.forEach((r) => {
+        const tr = document.createElement("tr");
+        if (r.id === best) tr.classList.add("is-best");
+        if (state.hovered === r.id) tr.classList.add("is-hovered");
+
+        const cells = [
+          ["", String(r.id)],
+          ["name", r.name],
+          ["", fmt(r.climate)], ["", fmt(r.health)], ["", fmt(r.welfare)], ["num-strong", fmt(r.aggImpact)],
+          ["", fmt(r.cognitive)], ["", fmt(r.social)], ["", fmt(r.adherence)], ["num-strong", fmt(r.avgEffort)],
+          ["", r.deltaImpact === null ? "–" : fmt(r.deltaImpact)],
+          ["", r.deltaEffort === null ? "–" : fmt(r.deltaEffort)],
+          r.id === 0 ? ["dominated", "–"]
+            : r.dominated ? ["dominated", "dominated"]
+            : ["num-strong", fmt2(r.mgpe)],
+        ];
+
+        cells.forEach(([cls, text]) => {
+          const td = document.createElement("td");
+          if (cls) td.className = cls;
+          td.textContent = text;
+          tr.appendChild(td);
+        });
+
+        bindHover(tr, r.id);
+        el.tbody.appendChild(tr);
+      });
+    }
+
+    function drawReadout(rows) {
+      if (state.hovered === null) {
+        el.readout.textContent = "Hover or tap a point for its scores";
+        return;
+      }
+      const r = rows.find((x) => x.id === state.hovered);
+      el.readout.textContent = `${r.name} · impact ${fmt(r.aggImpact)} · effort ${fmt(r.avgEffort)}`;
+    }
+
+    function buildControls() {
+      el.controls.innerHTML = "";
+      IMPACT_KEYS.forEach((key) => {
+        const wrap = document.createElement("div");
+        const label = document.createElement("label");
+        label.className = "control-label";
+        label.setAttribute("for", `s-${key}`);
+        const text = document.createElement("span");
+        text.textContent = WEIGHT_LABELS[key];
+        const value = document.createElement("span");
+        value.id = `v-${key}`;
+        label.append(text, value);
+
+        const input = document.createElement("input");
+        Object.assign(input, { id: `s-${key}`, type: "range", min: "0", max: "100", step: "0.5" });
+        input.setAttribute("aria-label", WEIGHT_LABELS[key]);
+        input.addEventListener("input", (e) => {
+          state.weights = reweight(key, Number(e.target.value));
+          render();
+        });
+
+        wrap.append(label, input);
+        el.controls.appendChild(wrap);
+      });
+    }
+
+    function buildLegend() {
+      el.legend.innerHTML = "";
+      IMPACT_KEYS.forEach((key) => {
+        const meta = SERIES[key];
+        const button = document.createElement("button");
+        button.type = "button";
+        button.setAttribute("aria-pressed", "true");
+        button.dataset.key = key;
+        button.addEventListener("click", () => {
+          state.visible[key] = !state.visible[key];
+          render();
+        });
+
+        // Swatch repeats the dash pattern and marker shape, so the legend still
+        // distinguishes the series without relying on colour.
+        const swatch = svgNode("svg", { width: 30, height: 12, viewBox: "0 0 30 12", "aria-hidden": "true" });
+        const line = svgNode("line", { x1: 1, y1: 6, x2: 29, y2: 6, stroke: meta.hex, "stroke-width": 2 });
+        if (meta.dash !== "none") line.setAttribute("stroke-dasharray", meta.dash);
+        swatch.append(line, marker(meta.marker, 15, 6, 3.6, meta.hex, 1));
+
+        const label = document.createElement("span");
+        label.textContent = meta.label;
+        button.append(swatch, label);
+        el.legend.appendChild(button);
+      });
+    }
+
+    function renderControls() {
+      IMPACT_KEYS.forEach((key) => {
+        document.getElementById(`s-${key}`).value = state.weights[key];
+        document.getElementById(`v-${key}`).textContent = `${fmt(state.weights[key])}%`;
+      });
+      Array.from(el.legend.children).forEach((button) => {
+        button.setAttribute("aria-pressed", String(state.visible[button.dataset.key]));
+      });
+    }
+
+    function render() {
+      const rows = computeRows();
+      const best = bestId(rows);
+      renderControls();
+      drawCurve(rows);
+      drawComponents(rows);
+      drawBars(rows, best);
+      drawTable(rows, best);
+      drawReadout(rows);
+      reportHeight();
+    }
+
+    // The embedding post listens for this so the iframe can size itself
+    // instead of relying on a hard-coded min-height that is always wrong on
+    // one device or the other.
+    function reportHeight() {
+      const h = document.documentElement.scrollHeight;
+      if (window.parent !== window) {
+        window.parent.postMessage({ type: "vegan-dashboard-height", height: h }, "*");
+      }
+    }
+
+    el.reset.addEventListener("click", () => {
+      state.weights = { climate: 100 / 3, health: 100 / 3, welfare: 100 / 3 };
+      render();
+    });
+
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(render, 120);
+    });
+    document.fonts?.ready.then(reportHeight);
+
+    buildControls();
+    buildLegend();
+    render();
+  </script>
+</body>
+</html>

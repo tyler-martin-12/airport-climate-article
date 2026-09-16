@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Distance residuals across London · 3D</title>
+  <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+  <style>
+    html, body, #map {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      min-height: 720px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f6f8fb;
+    }
+    .deck {
+      box-sizing: border-box;
+      position: absolute;
+      top: 66px;
+      left: 16px;
+      z-index: 10;
+      width: min(420px, calc(100vw - 32px));
+      max-height: calc(100% - 98px);
+      overflow: auto;
+      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(22,34,50,0.08);
+      border-radius: 14px;
+      box-shadow: 0 8px 26px rgba(15,31,61,0.12);
+      padding: 14px 16px;
+    }
+    .deck.is-collapsed {
+      display: none;
+    }
+    .controls-toggle {
+      box-sizing: border-box;
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 11;
+      border: 1px solid rgba(15,31,61,0.14);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.96);
+      color: #0f1f3d;
+      box-shadow: 0 8px 26px rgba(15,31,61,0.12);
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1;
+      padding: 12px 15px;
+    }
+    .controls-toggle:hover {
+      background: #f7f9fc;
+    }
+    .deck h1 { margin: 0; font-size: 18px; line-height: 1.3; color: #0f1f3d; }
+    .deck p { margin: 8px 0 0; font-size: 13px; line-height: 1.5; color: #425466; }
+    .mode-switch {
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(22,34,50,0.1);
+    }
+    .mode-label,
+    .control-label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #667085;
+    }
+    .mode-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .mode-button {
+      border: 1px solid rgba(15,31,61,0.14);
+      border-radius: 10px;
+      background: #ffffff;
+      color: #0f1f3d;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 12px;
+      cursor: pointer;
+    }
+    .mode-button.active {
+      background: #0f1f3d;
+      border-color: #0f1f3d;
+      color: #ffffff;
+      box-shadow: 0 6px 16px rgba(15,31,61,0.18);
+    }
+    .controls {
+      margin-top: 12px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .controls-row {
+      margin-top: 10px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .residual-control-group,
+    .borough-control-group {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(22,34,50,0.08);
+    }
+    .view-controls {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(22,34,50,0.08);
+    }
+    .rotation-controls {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(22,34,50,0.08);
+    }
+    .rotation-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .controls label { font-size: 12px; color: #425466; }
+    .controls select,
+    .controls button,
+    .controls-row button {
+      border: 1px solid rgba(22,34,50,0.12);
+      border-radius: 10px;
+      background: #ffffff;
+      color: #0f1f3d;
+      font-size: 13px;
+      padding: 8px 10px;
+    }
+    .controls select { min-width: 180px; }
+    .controls button,
+    .controls-row button {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    .controls button:hover,
+    .controls-row button:hover { background: #f7f9fc; }
+    .view-controls button {
+      background: #f8fafc;
+    }
+    .rotation-controls button {
+      background: #eef6ff;
+      border-color: rgba(50,136,189,0.28);
+      color: #164a73;
+      font-weight: 650;
+    }
+    .rotation-controls button:hover { background: #dff0ff; }
+    .legend {
+      box-sizing: border-box;
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      z-index: 10;
+      width: min(280px, calc(100vw - 32px));
+      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(22,34,50,0.08);
+      border-radius: 14px;
+      box-shadow: 0 8px 26px rgba(15,31,61,0.12);
+      padding: 14px 16px;
+    }
+    .legend-title { font-size: 13px; font-weight: 600; color: #0f1f3d; margin-bottom: 10px; }
+    .legend-bar {
+      height: 12px;
+      border-radius: 999px;
+      background: linear-gradient(
+        90deg,
+        #2166ac 0%,
+        #92c5de 25%,
+        #f7f7f7 50%,
+        #f4a582 75%,
+        #d6604d 100%
+      );
+    }
+    .is-hidden { display: none !important; }
+    .legend-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+      font-size: 12px;
+      color: #425466;
+      gap: 6px;
+    }
+    .caption {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #425466;
+      line-height: 1.45;
+    }
+    .tooltip {
+      position: absolute;
+      z-index: 20;
+      pointer-events: none;
+      background: rgba(15,31,61,0.95);
+      color: white;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 12px;
+      line-height: 1.45;
+      max-width: 240px;
+      display: none;
+      box-shadow: 0 8px 26px rgba(15,31,61,0.18);
+    }
+    .tooltip-title {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    @media (max-width: 700px) {
+      html, body, #map {
+        min-height: 640px;
+      }
+      .deck {
+        top: 58px;
+        left: 10px;
+        width: calc(100vw - 20px);
+        max-height: min(68vh, calc(100% - 78px));
+        padding: 12px;
+      }
+      .controls-toggle {
+        top: 10px;
+        left: 10px;
+        padding: 11px 14px;
+      }
+      .deck h1 {
+        font-size: 16px;
+      }
+      .deck p {
+        font-size: 12px;
+      }
+      .mode-button,
+      .controls select,
+      .controls button,
+      .controls-row button {
+        font-size: 12px;
+      }
+      .controls select {
+        min-width: 0;
+        flex: 1 1 160px;
+      }
+      .legend {
+        right: 10px;
+        bottom: 10px;
+        width: min(260px, calc(100vw - 20px));
+        padding: 12px;
+      }
+      .caption {
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <aside style="position:relative;z-index:10000;background:#fff9f2;color:#1a1208;padding:12px;font:14px system-ui">Reference integration only: the original housing dataset is intentionally omitted. The map layers are empty.</aside>
+  <div id="map"></div>
+  <button id="controls-toggle" class="controls-toggle" type="button" aria-controls="map-controls" aria-expanded="true">Hide controls</button>
+  <div id="map-controls" class="deck">
+    <div class="mode-switch">
+      <span class="mode-label">View</span>
+      <div class="mode-buttons">
+        <button id="mode-residual" class="mode-button active" type="button">Residuals</button>
+        <button id="mode-price" class="mode-button" type="button">£/sqft</button>
+      </div>
+    </div>
+    <h1 id="deck-title">Where London is more (and less) expensive than distance alone predicts</h1>
+    <p id="deck-copy">Red hexes are more expensive than the distance baseline expects; blue hexes are cheaper. Taller hexes are larger misses in either direction.</p>
+    <div class="residual-control-group" id="residual-controls">
+      <span class="control-label">Residual filter</span>
+      <div class="controls">
+        <select id="residual-filter">
+          <option value="" selected>All residuals</option>
+          <option value="positive">Pricier than baseline</option>
+          <option value="negative">Cheaper than baseline</option>
+          <option value="large">Large deviations only</option>
+        </select>
+        <button id="residual-reset" type="button">Reset</button>
+      </div>
+      <div class="controls-row">
+        <button id="show-positive" type="button">Only positive</button>
+        <button id="show-negative" type="button">Only negative</button>
+      </div>
+    </div>
+    <div class="borough-control-group" id="borough-controls">
+      <span class="control-label">Borough filter</span>
+      <div class="controls">
+        <select id="borough-filter">
+          <option value="" selected>All boroughs</option>
+          <option value="Barking and Dagenham">Barking and Dagenham</option><option value="Barnet">Barnet</option><option value="Bexley">Bexley</option><option value="Brent">Brent</option><option value="Bromley">Bromley</option><option value="Camden">Camden</option><option value="City of London">City of London</option><option value="Croydon">Croydon</option><option value="Ealing">Ealing</option><option value="Enfield">Enfield</option><option value="Greenwich">Greenwich</option><option value="Hackney">Hackney</option><option value="Hammersmith and Fulham">Hammersmith and Fulham</option><option value="Haringey">Haringey</option><option value="Harrow">Harrow</option><option value="Havering">Havering</option><option value="Hillingdon">Hillingdon</option><option value="Hounslow">Hounslow</option><option value="Islington">Islington</option><option value="Kensington and Chelsea">Kensington and Chelsea</option><option value="Kingston upon Thames">Kingston upon Thames</option><option value="Lambeth">Lambeth</option><option value="Lewisham">Lewisham</option><option value="Merton">Merton</option><option value="Newham">Newham</option><option value="Outside boundary">Outside boundary</option><option value="Redbridge">Redbridge</option><option value="Richmond upon Thames">Richmond upon Thames</option><option value="Southwark">Southwark</option><option value="Sutton">Sutton</option><option value="Tower Hamlets">Tower Hamlets</option><option value="Waltham Forest">Waltham Forest</option><option value="Wandsworth">Wandsworth</option><option value="Westminster">Westminster</option>
+        </select>
+        <button id="borough-reset" type="button">Reset</button>
+      </div>
+    </div>
+    <div class="view-controls">
+      <span class="control-label">Dimension</span>
+      <button id="toggle-dimension" type="button">Switch to 2D</button>
+    </div>
+    <div class="rotation-controls">
+      <span class="control-label">Rotate</span>
+      <div class="rotation-row">
+      <button id="rotate-left" type="button">Rotate left</button>
+      <button id="rotate-right" type="button">Rotate right</button>
+      </div>
+    </div>
+  </div>
+  <div class="legend">
+    <div id="legend-title" class="legend-title">Residual vs distance baseline</div>
+    <div id="legend-bar" class="legend-bar"></div>
+    <div id="legend-labels" class="legend-labels">
+      <span>-1</span>
+      <span>-0.5</span>
+      <span>0%</span>
+      <span>+0.5</span>
+      <span>+1</span>
+    </div>
+    <div id="legend-caption" class="caption">Residuals are capped at ±100% before normalization: -1 is -100%, 0 is baseline, and +1 is +100%.</div>
+  </div>
+  <div id="tooltip" class="tooltip"></div>
+
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <script>
+    const residualData = {"type":"FeatureCollection","features":[]}; // Housing data intentionally omitted.
+    const priceData = {"type":"FeatureCollection","features":[]}; // Housing data intentionally omitted.
+    window.__mapReady = false;
+    const map = new maplibregl.Map({
+      container: 'map',
+      style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
+      center: [-0.118, 51.507],
+      zoom: 10.25,
+      pitch: 52,
+      bearing: -10,
+      antialias: true
+    });
+    window.__mapInstance = map;
+
+    const deckTitle = document.getElementById('deck-title');
+    const deckCopy = document.getElementById('deck-copy');
+    const legendTitle = document.getElementById('legend-title');
+    const legendBar = document.getElementById('legend-bar');
+    const legendLabels = document.getElementById('legend-labels');
+    const legendCaption = document.getElementById('legend-caption');
+    const tooltip = document.getElementById('tooltip');
+    const controlsToggle = document.getElementById('controls-toggle');
+    const mapControls = document.getElementById('map-controls');
+    const residualControls = document.getElementById('residual-controls');
+    const residualFilter = document.getElementById('residual-filter');
+    const residualReset = document.getElementById('residual-reset');
+    const boroughFilter = document.getElementById('borough-filter');
+    const boroughReset = document.getElementById('borough-reset');
+    const showPositive = document.getElementById('show-positive');
+    const showNegative = document.getElementById('show-negative');
+    const modeResidual = document.getElementById('mode-residual');
+    const modePrice = document.getElementById('mode-price');
+    const toggleDimension = document.getElementById('toggle-dimension');
+    const rotateLeft = document.getElementById('rotate-left');
+    const rotateRight = document.getElementById('rotate-right');
+    let activeMode = 'residual';
+    let isFlat = false;
+    let controlsVisible = true;
+    function signedPct(v) { return `${v > 0 ? '+' : ''}${Math.round(v)}%`; }
+    function signedNorm(v) { return `${v > 0 ? '+' : ''}${v.toFixed(2)}`; }
+    function money(v) { return '£' + Math.round(v).toLocaleString('en-GB'); }
+    const normalizedResidualExpression = [
+      '/',
+      ['min', 100, ['max', -100, ['to-number', ['get', 'median_residual_pct']]]],
+      100
+    ];
+    const residualHeightExpression = [
+      'interpolate',
+      ['linear'],
+      ['abs', normalizedResidualExpression],
+      0, 0,
+      0.1, 300,
+      0.25, 900,
+      0.5, 2200,
+      0.75, 3800,
+      1, 5400
+    ];
+    const priceHeightExpression = [
+      'interpolate',
+      ['linear'],
+      ['to-number', ['get', 'median_price_per_sqft']],
+      400, 20,
+      560, 180,
+      720, 520,
+      880, 1200,
+      1040, 2400,
+      1850, 4500
+    ];
+    const residualLegendBar = 'linear-gradient(90deg, #2166ac 0%, #92c5de 25%, #f7f7f7 50%, #f4a582 75%, #d6604d 100%)';
+    const priceLegendBar = 'linear-gradient(90deg, #d9ef8b, #a6d96a, #66c2a5, #3288bd, #225ea8, #0c2c84)';
+    function setResidualFilter(value) {
+      residualFilter.value = value;
+      applyResidualFilter();
+    }
+    function residualModeFilter() {
+      const active = residualFilter.value;
+      if (active === 'positive') {
+        return ['>', ['to-number', ['get', 'median_residual_pct']], 0];
+      }
+      if (active === 'negative') {
+        return ['<', ['to-number', ['get', 'median_residual_pct']], 0];
+      }
+      if (active === 'large') {
+        return ['>=', ['abs', ['to-number', ['get', 'median_residual_pct']]], 15];
+      }
+      return null;
+    }
+    function boroughModeFilter() {
+      const active = boroughFilter.value;
+      return active ? ['==', ['get', 'borough'], active] : null;
+    }
+    function combineFilters(filters) {
+      const active = filters.filter(Boolean);
+      if (active.length === 0) return null;
+      if (active.length === 1) return active[0];
+      return ['all', ...active];
+    }
+    function applyResidualFilter() {
+      map.setFilter('residuals-extrusion', combineFilters([residualModeFilter(), boroughModeFilter()]));
+      tooltip.style.display = 'none';
+    }
+    function applyBoroughFilter() {
+      map.setFilter('ppsf-extrusion', boroughModeFilter());
+      applyResidualFilter();
+      tooltip.style.display = 'none';
+    }
+    function rotateBy(delta) {
+      map.easeTo({
+        bearing: map.getBearing() + delta,
+        duration: 800,
+        essential: true
+      });
+    }
+    function setControlsVisible(visible) {
+      controlsVisible = visible;
+      mapControls.classList.toggle('is-collapsed', !visible);
+      controlsToggle.textContent = visible ? 'Hide controls' : 'Show controls';
+      controlsToggle.setAttribute('aria-expanded', String(visible));
+    }
+    controlsToggle.addEventListener('click', () => setControlsVisible(!controlsVisible));
+    if (window.matchMedia('(max-width: 700px)').matches) {
+      setControlsVisible(false);
+    } else {
+      setControlsVisible(true);
+    }
+    function setDimension(flat) {
+      isFlat = flat;
+      map.setPaintProperty('residuals-extrusion', 'fill-extrusion-height', flat ? 0 : residualHeightExpression);
+      map.setPaintProperty('ppsf-extrusion', 'fill-extrusion-height', flat ? 0 : priceHeightExpression);
+      toggleDimension.textContent = flat ? 'Switch to 3D' : 'Switch to 2D';
+    }
+    function setMode(mode) {
+      activeMode = mode;
+      tooltip.style.display = 'none';
+      const residualVisible = mode === 'residual' ? 'visible' : 'none';
+      const priceVisible = mode === 'price' ? 'visible' : 'none';
+      map.setLayoutProperty('residuals-extrusion', 'visibility', residualVisible);
+      map.setLayoutProperty('ppsf-extrusion', 'visibility', priceVisible);
+      residualControls.classList.toggle('is-hidden', mode !== 'residual');
+      modeResidual.classList.toggle('active', mode === 'residual');
+      modePrice.classList.toggle('active', mode === 'price');
+
+      if (mode === 'price') {
+        deckTitle.textContent = 'London by the square foot';
+        deckCopy.textContent = 'Taller and darker hexes mark higher median sale price per square foot.';
+        legendTitle.textContent = 'Median £ per square foot';
+        legendBar.style.background = priceLegendBar;
+        legendLabels.innerHTML = '<span>£400</span><span>£600</span><span>£800</span><span>£1,000</span><span>£1,850+</span>';
+        legendCaption.textContent = 'Height and colour both increase with the median value of space in each 250m hex.';
+        applyBoroughFilter();
+      } else {
+        deckTitle.textContent = 'Where London is more (and less) expensive than distance alone predicts';
+        deckCopy.textContent = 'Red hexes are more expensive than the distance baseline expects; blue hexes are cheaper. Taller hexes are larger misses in either direction.';
+        legendTitle.textContent = 'Residual vs distance baseline';
+        legendBar.style.background = residualLegendBar;
+        legendLabels.innerHTML = '<span>-1</span><span>-0.5</span><span>0%</span><span>+0.5</span><span>+1</span>';
+        legendCaption.textContent = 'Residuals are capped at ±100% before normalization: -1 is -100%, 0 is baseline, and +1 is +100%.';
+        applyResidualFilter();
+      }
+    }
+
+    map.on('load', () => {
+      map.addSource('residuals', {
+        type: 'geojson',
+        data: residualData
+      });
+      map.addSource('ppsf', {
+        type: 'geojson',
+        data: priceData
+      });
+
+      map.addLayer({
+        id: 'residuals-extrusion',
+        type: 'fill-extrusion',
+        source: 'residuals',
+        paint: {
+          'fill-extrusion-color': [
+            'interpolate',
+            ['linear'],
+            normalizedResidualExpression,
+            -1, '#2166ac',
+            -0.5, '#92c5de',
+            0, '#f7f7f7',
+            0.5, '#f4a582',
+            1, '#d6604d'
+          ],
+          'fill-extrusion-height': residualHeightExpression,
+          'fill-extrusion-base': 0,
+          'fill-extrusion-opacity': 0.88
+        }
+      });
+      map.addLayer({
+        id: 'ppsf-extrusion',
+        type: 'fill-extrusion',
+        source: 'ppsf',
+        layout: {
+          visibility: 'none'
+        },
+        paint: {
+          'fill-extrusion-color': [
+            'interpolate',
+            ['linear'],
+            ['to-number', ['get', 'median_price_per_sqft']],
+            400, '#d9ef8b',
+            560, '#a6d96a',
+            720, '#66c2a5',
+            880, '#3288bd',
+            1040, '#225ea8',
+            1850, '#0c2c84'
+          ],
+          'fill-extrusion-height': priceHeightExpression,
+          'fill-extrusion-base': 0,
+          'fill-extrusion-opacity': 0.9
+        }
+      });
+
+      map.on('mousemove', 'residuals-extrusion', (e) => {
+        const feature = e.features && e.features[0];
+        if (!feature) {
+          tooltip.style.display = 'none';
+          return;
+        }
+        const p = feature.properties;
+        const residual = Number(p.median_residual_pct);
+        const normalized = Math.max(-100, Math.min(100, residual)) / 100;
+        tooltip.innerHTML = `
+          <div class="tooltip-title">${p.neighbourhood} · ${p.postcode_district}</div>
+          <div>${p.n} properties</div>
+          <div>Median residual: ${signedPct(residual)}</div>
+          <div>Normalized residual: ${signedNorm(normalized)}</div>
+          <div>Median £/sqft: ${money(Number(p.median_price_per_sqft))}</div>
+          <div>Median price: ${money(Number(p.median_price))}</div>
+          <div>Median distance: ${Number(p.median_distance_km).toFixed(1)} km</div>
+        `;
+        tooltip.style.display = 'block';
+        tooltip.style.left = `${e.point.x + 14}px`;
+        tooltip.style.top = `${e.point.y + 14}px`;
+      });
+
+      map.on('mouseleave', 'residuals-extrusion', () => {
+        tooltip.style.display = 'none';
+      });
+      map.on('mousemove', 'ppsf-extrusion', (e) => {
+        const feature = e.features && e.features[0];
+        if (!feature) {
+          tooltip.style.display = 'none';
+          return;
+        }
+        const p = feature.properties;
+        tooltip.innerHTML = `
+          <div class="tooltip-title">${p.n} properties</div>
+          <div>Median £/sqft: ${money(Number(p.median_price_per_sqft))}</div>
+          <div>Median price: ${money(Number(p.median_price))}</div>
+          <div>Median floor area: ${Math.round(Number(p.median_floor_area_sqft)).toLocaleString('en-GB')} sqft</div>
+        `;
+        tooltip.style.display = 'block';
+        tooltip.style.left = `${e.point.x + 14}px`;
+        tooltip.style.top = `${e.point.y + 14}px`;
+      });
+
+      map.on('mouseleave', 'ppsf-extrusion', () => {
+        tooltip.style.display = 'none';
+      });
+
+      residualFilter.addEventListener('change', applyResidualFilter);
+      residualReset.addEventListener('click', () => {
+        setResidualFilter('');
+      });
+      boroughFilter.addEventListener('change', applyBoroughFilter);
+      boroughReset.addEventListener('click', () => {
+        boroughFilter.value = '';
+        applyBoroughFilter();
+      });
+      showPositive.addEventListener('click', () => setResidualFilter('positive'));
+      showNegative.addEventListener('click', () => setResidualFilter('negative'));
+      modeResidual.addEventListener('click', () => setMode('residual'));
+      modePrice.addEventListener('click', () => setMode('price'));
+      toggleDimension.addEventListener('click', () => setDimension(!isFlat));
+      rotateLeft.addEventListener('click', () => rotateBy(20));
+      rotateRight.addEventListener('click', () => rotateBy(-20));
+      applyResidualFilter();
+      setDimension(false);
+      setMode('residual');
+
+      map.once('idle', () => {
+        window.__mapReady = true;
+      });
+    });
+  </script>
+</body>
+</html>
