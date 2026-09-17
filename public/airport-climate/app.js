@@ -34,7 +34,7 @@ function select(id,scroll=false){
  detail.innerHTML=`<h3>${esc(r.project)}</h3><div class="place">${esc(r.city)} · ${esc(r.country)} · ${esc(r.region)}</div>
  <div class="detail-grid">
  <div><b>Expansion</b>${esc(r.expansion_type)}</div><div><b>Status</b>${esc(r.status)}</div><div><b>Capacity / scale</b>${esc(r.capacity)}</div>
- <div><b>Decision constraint · interpretation</b>${esc(r.prominence)}</div><div><b>National goal</b>${esc(r.national_climate_goal)}</div><div><b>Emissions coverage · aviation goal</b>${esc(r.aviation_climate_goal)}</div><div><b>International aviation</b>${esc(r.international_aviation_included)}</div>
+ <div><b>Decision constraint · interpretation</b>${esc(r.prominence)}</div><div><b>National goal</b>${esc(r.national_climate_goal)}</div><div><b>Emissions coverage · aviation goal</b>${esc(r.aviation_climate_goal)}</div><div><b>International aviation</b>${esc(r.international_aviation_included === 'Not explicit in reviewed handoff' ? 'Not established in this review' : r.international_aviation_included)}</div>
  </div><p class="detail-note"><strong>Decision evidence and interpretation:</strong> ${esc(r.evidence_note)}</p>
  <p class="sources">${sourceLink(r.project_source,'Project source')}${r.project_source&&r.climate_source?' · ':''}${sourceLink(r.climate_source,'Climate / policy source')} · Interpretation confidence: ${esc(r.confidence)}</p>${r.verification_note?`<p class="sources">Checked 16 September 2026: ${esc(r.verification_note)} ${sourceLink(r.verification_source,'Verification source')}</p>`:''}`;
  markers.querySelectorAll('.marker').forEach(el=>{el.classList.toggle('is-active',el.dataset.id===id);el.setAttribute('aria-pressed',String(el.dataset.id===id))});

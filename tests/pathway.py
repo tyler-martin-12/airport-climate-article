@@ -17,9 +17,11 @@ assert sum(s['percent'] for s in p['pathway']['segments']) == 100
 html = Path('dist/blog/airport-climate/index.html').read_text()
 for segment in p['pathway']['segments']:
     assert f'class="pathway-{segment["key"]}" style="width:{segment["percent"]}%"' in html
-assert 'Not a forecast of this passenger’s flight in 2050.' in html
-assert sum(round(t['illustrative_kg_equivalent']) for t in p['pathway']['segments']) == 380
-assert 'not physical exhaust or predicted savings on this flight' in html
+assert p['pathway']['baseline_units'] == 100
+assert '100 baseline emissions units' in html
+assert 'not current policy or a forecast for the London–New York flight' in html
+assert 'passenger estimate is separate and is not used to calculate these segments' in html
+assert 'kg equivalent' not in html
 assert 'it is not added twice' in html
 assert 'not the journey’s full climate footprint' in html
 assert 'CCC, chapters 2–3</a>' in html

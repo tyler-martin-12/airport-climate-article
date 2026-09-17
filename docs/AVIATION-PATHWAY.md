@@ -14,7 +14,7 @@
 
 The reviewed published pathway decompositions are sector aggregates, not an economy-passenger LHR–JFK forecast. No directly comparable, cabin-allocated route decomposition was established. DfT has a geographically detailed model; that does not make the report's aggregate wedges a route forecast. A claim that no route-level model exists would be too strong and is not made.
 
-At Tyler's request, both bars now share a rounded 380 kg illustrative starting budget and sit directly together. The lower bar rescales the official shares: 136.8 residual, 76 SAF, 76 efficiency, 91.2 demand, displayed as 137/76/76/91 kg equivalents. This is an explicitly labelled arithmetic analogy, not a physically comparable route forecast: sector CO₂e abatement shares and present-day passenger direct CO₂ have different accounting boundaries. The demand segment describes avoided journeys, never cleaner emissions on a flight still taken. The disclaimer appears above the bars, in the caption and in expanded methodology. No 2050 route emissions value is assigned.
+The two adjacent bars now use the same 100-unit sector baseline for 2050, following Figure 3.1. The 380 kg present-day flight estimate is separate context, not a multiplier for the sector shares. This replaces the earlier arithmetic analogy, which risked implying a route-specific forecast despite its caveats.
 
 ## Older Jet Zero scenario relevant to Gatwick
 

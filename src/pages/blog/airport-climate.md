@@ -2,7 +2,7 @@
 layout: "../../layouts/BlogPost.astro"
 title: "The world is building airports. Britain is arguing about one."
 date: "2026-09-16"
-description: "Britain is not alone in constraining airport expansion, but it tests aviation growth against binding, economy-wide carbon budgets that include international flights, while Singapore plans to decarbonise aviation as its hub grows."
+description: "Is Britain shooting itself in the foot over airport expansion? Britain is not alone in constraining airport expansion, but it tests aviation growth against binding, economy-wide carbon budgets that include international flights, while Singapore plans to decarbonise aviation as its hub grows."
 image: "/airport-climate/thumbnail.png"
 imageAlt: "Editorial illustration of a Union Jack-clad figure firing an aeroplane towards its own foot."
 slug: "airport-climate"
@@ -38,6 +38,8 @@ Britain subjects expansion to carbon budgets without ruling it out. [Gatwick's N
 
 That approval was not a quick exemption from the rules. A [provisional decision in February 2025](https://www.gov.uk/government/speeches/transport-planning-gatwick-airport) led to further consideration of conditions, including noise and public transport, before final consent and subsequent litigation.
 
+### Why Heathrow is different from Gatwick
+
 Heathrow nevertheless represents a much larger expansion, with additional emissions that build later, closer to and beyond the UK's net-zero deadline. Calling both projects "another runway" hides the physical difference. Gatwick is [repositioning its existing standby Northern Runway](https://www.gatwickairport.com/company/future-plans/northern-runway.html) to bring it into routine use alongside the main runway, [for smaller departing aircraft only](https://www.gatwickairport.com/on/demandware.static/-/Sites-Gatwick-Library/default/dwbb223e54/images/Corporate-PDFs/Northern-Runway/Other-Consultation-Documents/other-consultation-virtual-exhibition.pdf). Heathrow proposes a full new runway up to 3,500 metres long. The government's Gatwick figure is [up to 100,000 additional flights a year](https://www.gov.uk/government/news/gatwick-to-open-second-runway-as-government-wins-legal-challenge); Heathrow's proposal allows [up to 276,000](https://www.heathrow.com/expansion/about-expansion). These describe potential capacity, not a prediction that every new flight happens immediately.
 
 The emissions estimates make the scale difference tangible. Gatwick's assessed additional aviation emissions average **about 1.12 million tonnes of CO₂-equivalent a year during 2033–37**. Heathrow's rise from **0.4 million tonnes a year during 2038–42**, to **2.4 million in 2050**, and **4.5 million a year once expansion is complete in 2054**. The eventual Heathrow increment is roughly **four times** the quoted Gatwick annual increment. That is an intuitive comparison of scale, not a like-for-like forecast: Gatwick's assessment uses Jet Zero's high-ambition assumptions, Heathrow's uses current policy, and the dates differ. ([Gatwick decision, paragraphs 154–157](https://nsip-documents.planninginspectorate.gov.uk/published-documents/TR020005-004237-GATWICK%20AIRPORT%20NORTHERN%20RUNWAY%20DCO%20-%20Decision%20Letter%20-%2021%20September%202025.pdf); [CCC, Table 2.1](https://www.theccc.org.uk/wp-content/uploads/2026/09/Advice-to-the-UK-Government-on-proposed-Heathrow-Airport-expansion-64r872u923i92184y34r2398u.pdf))
@@ -50,6 +52,8 @@ The carbon reasoning matters more than the headline approval. The government acc
 
 The legal distinction was between a significant emissions increase and one that would materially undermine meeting the UK's targets. Those are not the same finding. A decision surviving legal challenge does not demonstrate that the forecast reductions will actually arrive. ([Analysis of the High Court judgment](https://www.39essex.com/our-thinking/gatwicks-northern-runway-project-cleared-for-take-off-r-on-the-application-of-barclay-and-another-v-secretary-of-state-for-transport-and-another-2026-ewhc-1556-admin/))
 
+### What aviation decarbonisation actually assumes
+
 Gatwick's extra flights do not stop emitting when the Sixth Carbon Budget ends. They continue into later periods; the approval relies partly on aviation becoming less emissions-intensive. **That does not mean long-haul jets become zero-emission.** Jet Zero's 2022 high-ambition scenario assumed 2% annual fuel-efficiency improvement, 50% SAF uptake by 2050 and some zero-emission aircraft, mainly on domestic and short-haul routes. It still left 19.3 million tonnes of annual residual emissions in its illustrative accounting. ([DfT analytical annex, pp. 9–10](https://assets.publishing.service.gov.uk/media/62f21404d3bf7f75b61f8c22/jet-zero-strategy-analytical-annex.pdf))
 
 Efficiency means burning less fuel through better aircraft, engines and operations. Sustainable aviation fuel, or SAF, still releases CO₂ when burned: its advantage depends on the carbon's origin and the emissions from making the fuel, not a clean exhaust. Carbon markets are different again. Jet Zero modelled the effect of carbon prices on demand and left residual emissions to be addressed outside aviation; buying an allowance or offset is not itself permanent carbon removal. ([Jet Zero Strategy, pp. 16, 48–51](https://assets.publishing.service.gov.uk/media/62e931d48fa8f5033896888a/jet-zero-strategy.pdf); [DfT SAF guidance](https://www.gov.uk/government/publications/about-the-saf-mandate/the-saf-mandate-an-essential-guide))
@@ -59,31 +63,31 @@ Those older ambitions are not today's policy forecast. DfT's 2026 Current Trends
 <link rel="stylesheet" href="/airport-climate/pathway.css">
 <figure class="aviation-pathway" aria-labelledby="pathway-title">
 <h3 id="pathway-title">Net zero does not mean a zero-emission airliner</h3>
-<p class="pathway-deck">London Heathrow → New York JFK · one economy passenger · one way</p>
-<p class="pathway-boundary"><strong>Illustration: the sector pathway scaled to a 380 kg starting budget.</strong> Not a forecast of this passenger’s flight in 2050.</p>
-<section class="pathway-panel pathway-paired" aria-label="Two bars on the same illustrative 380 kilogram scale">
-<h4 id="flight-today">Today’s flight estimate · about 380 kg CO₂</h4>
-<div class="flight-bar" role="img" aria-label="Today's rounded flight estimate: 380 kilograms direct CO2"><span style="width:100%"></span></div>
-<h4 id="flight-future">2050 sector mix · illustrative allocation</h4>
-<div class="pathway-stack" role="img" aria-label="Illustrative allocation of 380: 137 residual balanced by removals, 76 SAF, 76 efficiency, 91 avoided through slower demand growth; not a flight forecast">
-<span class="pathway-residual" style="width:36%">137</span>
-<span class="pathway-saf" style="width:20%">76</span>
-<span class="pathway-efficiency" style="width:20%">76</span>
-<span class="pathway-demand" style="width:24%">91</span>
+<p class="pathway-deck">For context: London Heathrow → New York JFK, one economy passenger, one way, is about <strong>380 kg direct CO₂ today</strong>.</p>
+<p class="pathway-boundary"><strong>The bars below show the CCC’s UK aviation pathway, not that individual flight.</strong> Both use a 100-unit sector baseline for 2050.</p>
+<section class="pathway-panel pathway-paired" aria-label="Two bars on the same 100-unit sector emissions scale">
+<h4 id="flight-today">2050 without further decarbonisation action · 100 units</h4>
+<div class="flight-bar" role="img" aria-label="2050 sector emissions baseline without further decarbonisation action: 100 units"><span style="width:100%"></span></div>
+<h4 id="flight-future">2050 recommended pathway · how those 100 units are addressed</h4>
+<div class="pathway-stack" role="img" aria-label="Of 100 baseline sector emissions units: 36 remain and are balanced by removals, 20 avoided through SAF, 20 through efficiency, 24 through slower demand growth">
+<span class="pathway-residual" style="width:36%">36</span>
+<span class="pathway-saf" style="width:20%">20</span>
+<span class="pathway-efficiency" style="width:20%">20</span>
+<span class="pathway-demand" style="width:24%">24</span>
 </div>
-<div class="pathway-axis"><span>0</span><span>380 kg starting budget</span></div>
+<div class="pathway-axis"><span>0</span><span>100 baseline emissions units</span></div>
 <ul class="pathway-legend">
-<li><i class="pathway-residual" aria-hidden="true"></i><span><strong>137 kg equivalent · residual (36%)</strong>Still emitted on the model’s accounting basis; balanced by permanent engineered removals.</span></li>
-<li><i class="pathway-saf" aria-hidden="true"></i><span><strong>76 kg equivalent · SAF (20%)</strong>Lower accounted emissions through alternative fuels, not the disappearance of exhaust CO₂.</span></li>
-<li><i class="pathway-efficiency" aria-hidden="true"></i><span><strong>76 kg equivalent · efficiency (20%)</strong>Less fuel needed through aircraft and operational improvements.</span></li>
-<li><i class="pathway-demand" aria-hidden="true"></i><span><strong>91 kg equivalent · demand (24%)</strong>Fewer journeys than in the baseline, not a cleaner individual flight.</span></li>
+<li><i class="pathway-residual" aria-hidden="true"></i><span><strong>36 units · residual / removals</strong>Still emitted on the model’s accounting basis; balanced by permanent engineered removals.</span></li>
+<li><i class="pathway-saf" aria-hidden="true"></i><span><strong>20 units · SAF</strong>Lower accounted emissions through alternative fuels, not the disappearance of exhaust CO₂.</span></li>
+<li><i class="pathway-efficiency" aria-hidden="true"></i><span><strong>20 units · efficiency</strong>Less fuel needed through aircraft and operational improvements.</span></li>
+<li><i class="pathway-demand" aria-hidden="true"></i><span><strong>24 units · slower demand growth</strong>Fewer journeys than in the baseline, not a cleaner individual flight.</span></li>
 </ul>
 <p class="pathway-takeaway">Residual emissions + equivalent permanent removals = modelled net zero. <strong>The aircraft still emit CO₂.</strong></p>
 </section>
-<figcaption>Baseline: 2026 UK government long-haul economy <strong>direct CO₂</strong> factor, applied to approximately 5,539 km LHR–JFK, one way. For illustration, the lower bar allocates that rounded 380 kg starting budget using the CCC’s <strong>sector-wide CO₂e abatement shares</strong>: 36%, 20%, 20%, 24%. Its kg equivalents are arithmetic illustrations, not physical exhaust or predicted savings on this flight. The demand portion represents journeys avoided. The baseline excludes fuel production and non-CO₂ warming: this is <strong>not the journey’s full climate footprint</strong>. Sources: <a href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2026">DESNZ 2026 factors</a>; <a href="https://www.theccc.org.uk/wp-content/uploads/2026/09/Advice-to-the-UK-Government-on-proposed-Heathrow-Airport-expansion-64r872u923i92184y34r2398u.pdf#page=44">CCC September 2026 advice, pp. 44–45</a>.</figcaption>
+<figcaption>Bars: shares of the CCC’s 2050 sector-wide CO₂e baseline without further decarbonisation action, including Heathrow expansion. This is a recommended pathway, not current policy or a forecast for the London–New York flight. Neither the bars nor the separate direct-CO₂ flight estimate include aviation’s non-CO₂ warming effects. Sources: <a href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2026">DESNZ 2026 factors</a>; <a href="https://www.theccc.org.uk/wp-content/uploads/2026/09/Advice-to-the-UK-Government-on-proposed-Heathrow-Airport-expansion-64r872u923i92184y34r2398u.pdf#page=44">CCC September 2026 advice, pp. 44–45</a>.</figcaption>
 <details class="pathway-method"><summary>Calculation, accounting and limits</summary>
 <p>Calculated distance: 5,539.43 km using a great-circle calculation (Earth radius 6,371.0088 km), from the <a href="https://www.aurora.nats.co.uk/htmlAIP/Publications/2025-12-25-AIRAC/html/eAIP/EG-AD-2.EGLL-en-GB.html">NATS Heathrow reference point</a> and <a href="https://www.faa.gov/air_traffic/publications/atpubs/aip_html/part3_ad_2.0_new_york.html">FAA JFK reference point</a>. Multiply by 0.06826 kg CO₂/passenger-km (2026 full-set workbook, “Business travel- air”, J28) = 378.12 kg, rounded to 380. The factor already includes the 8% distance uplift; it is not added twice. This is a fleet-average reporting estimate with economy-seat and freight allocation, not a measurement of a specific flight. The workbook’s CO₂e total and radiative-forcing-adjusted factor are deliberately not used.</p>
-<p>Both bars use a shared illustrative 380 kg budget. The lower bar multiplies 380 by the CCC shares: 136.8 residual, 76 SAF, 76 efficiency and 91.2 demand, rounded to 137 + 76 + 76 + 91 = 380. This rescaling explains the sector’s mix of mechanisms, not what physically happens to the CO₂ from this one flight. Avoided journeys are not an emissions saving on a journey still taken. Different aircraft, load factors, fuel mixes and accounting boundaries prevent a defensible route-specific 2050 forecast from these aggregates.</p>
+<p>Both bars use the same 100-unit sector baseline: 36 units remain and require engineered removals, while SAF avoids 20, efficiency 20 and slower demand growth 24. The 380 kg passenger estimate is separate and is not used to calculate these segments. Avoided journeys are not an emissions saving on a journey still taken. Different aircraft, load factors, fuel mixes and accounting boundaries prevent a defensible route-specific 2050 forecast from these aggregates. The passenger estimate excludes fuel production and non-CO₂ warming: it is not the journey’s full climate footprint.</p>
 <p>SAF’s physical exhaust CO₂ is not the same as its lifecycle or national-inventory emissions. Fuel-production emissions may be counted in other sectors. Jet Zero’s annex reports 19.3 MtCO₂e residual emissions in 2050 when using its illustrative SAF savings treatment, but 15.4 MtCO₂e under whole-economy accounting. Neither number measures all physical exhaust CO₂. They must not be mixed with the passenger factor or interpreted as full lifecycle flight footprints.</p>
 <p>The CCC split is against a 2050 baseline without further decarbonisation action, not against today’s emissions. Its percentages are rounded and its mix is uncertain. It includes permanent engineered removals; generic offsets or emissions allowances are not equivalent. Non-CO₂ effects such as contrails remain outside these bars, so modelled net-zero greenhouse gases do not establish zero warming from aviation.</p>
 </details>
@@ -160,18 +164,12 @@ Second, "environment" is broader than carbon. Schiphol's constraints are insepar
 
 The categories are therefore best read as an interpretation of **institutional friction**. The dataset was assembled with ChatGPT assistance; the classifications are analytical judgements, not ratings issued by the linked sources. The workbook records that analysis but is not independent evidence for it. At one end, climate is something a project must survive. At the other, it is something the airport is expected to manage while the strategic case for expansion is largely taken as given.
 
-I also left unknowns as unknowns. The phrase "net zero by 2050" is easy to find in national plans; whether it explicitly includes international aviation on a comparable accounting basis often is not. The interactive only marks that inclusion as established for the UK and Singapore, supported by the government sources linked above. Elsewhere, “Not explicit” means it has not been established in this research, not that the country excludes aviation.
+I also left unknowns as unknowns. The phrase "net zero by 2050" is easy to find in national plans; whether it explicitly includes international aviation on a comparable accounting basis often is not. The interactive only marks that inclusion as established for the UK and Singapore, supported by the government sources linked above. Elsewhere, “Not established in this review” means inclusion has not been established in this research, not that the country excludes aviation.
 
 ## What the argument is really about
 
-The central distinction is institutional: which emissions are covered, what constrains an expansion decision, and how much confidence is placed in future decarbonisation.
+The practical question for Heathrow is what government requires before allowing the additional capacity: which emissions must be addressed, which policies will deliver the reductions, and who pays if the technologies cost more or arrive later than expected.
 
-Britain has peers. France has cancelled airport capacity on environmental grounds. Dutch policy has tried to constrain Schiphol. Austria has litigated a runway through the climate question. These cases show several ways environmental limits can enter a capacity decision; they do not establish a ranking of continents.
+Gatwick shows that a binding carbon budget can accommodate expansion. Singapore shows that a serious aviation target can accompany hub growth. Neither approval nor a target establishes that the promised reductions will arrive.
 
-But explicit aviation climate commitments also coexist with substantial expansion. Singapore plans hub growth alongside decarbonisation. Whether the promised reductions can keep pace remains a question of delivery, not something the target settles.
-
-Britain's unusual feature is not that it has a climate target. Almost everyone in this dataset has one of some kind. It is that international aviation is being pulled inside legally binding economy-wide carbon budgets, making the emissions enabled by a runway harder to leave in a separate box.
-
-That compatibility requirement is consequential. It does not, by itself, explain Heathrow's long history of delay, or establish that every proposed expansion should fail.
-
-A net-zero target tells us where a government says aviation should end up. An expansion decision reveals what it requires before allowing more capacity. The useful comparison is between those requirements, the confidence placed in future decarbonisation, and whether the promised emissions reductions arrive.
+A net-zero target tells us where a government says aviation should end up. An expansion decision reveals how much confidence it places in getting there. That is the useful comparison, rather than which country appears most enthusiastic about another runway.

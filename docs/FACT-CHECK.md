@@ -68,4 +68,4 @@ No dataset, classification, interactive or production-site changes.
 
 ## Aviation decarbonisation explainer
 
-Added a targeted prose/graphic insert immediately before the Gatwick confidence question. See [full calculation and source audit](AVIATION-PATHWAY.md). The graphic distinguishes a 2026 direct-CO₂ passenger estimate from an explicitly illustrative allocation of the same rounded 380 kg budget using CCC sector-wide shares. This arithmetic analogy is not a route forecast, a physical exhaust decomposition or a lifecycle calculation. Original airport records, scores and article sections are unchanged.
+Added a targeted prose/graphic insert immediately before the Gatwick confidence question. See [full calculation and source audit](AVIATION-PATHWAY.md). The graphic separates the 2026 direct-CO₂ passenger estimate from two aligned bars using a 100-unit sector baseline. No route-specific savings are calculated. The opening now frames the retained thumbnail as a question; subheadings, a shorter conclusion and clearer unknown-policy labels improve readability. Airport data and classifications remain unchanged.
