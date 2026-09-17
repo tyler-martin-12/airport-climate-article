@@ -2,7 +2,7 @@
 layout: "../../layouts/BlogPost.astro"
 title: "The world is building airports. Britain is arguing about one."
 date: "2026-09-16"
-description: "Heathrow's third runway has become a test of Britain's carbon budgets. Around the world, countries with climate targets are expanding airports anyway. The difference is not ambition so much as what the target is allowed to constrain."
+description: "Britain is not alone in constraining airport expansion, but it tests aviation growth against binding, economy-wide carbon budgets that include international flights, while Singapore plans to decarbonise aviation as its hub grows."
 slug: "airport-climate"
 tags: ["aviation", "climate", "policy"]
 ---
@@ -13,9 +13,7 @@ Recently she was telling me about Heathrow. The government wants a third runway.
 
 At roughly the same time, I kept watching videos from The B1M about airports that made Heathrow look almost quaint, including its films on [Dubai’s Al Maktoum expansion](https://www.theb1m.com/video/dubai-is-building-the-world-s-biggest-airport) and [Singapore’s Changi Airport](https://www.theb1m.com/video/why-the-worlds-most-beautiful-airport-doesnt-collapse). Dubai is building out Al Maktoum into a five-runway mega-hub. Singapore has started work on Changi Terminal 5. India has built new airports for Delhi and Mumbai. Istanbul opened an enormous new hub in 2018. Hong Kong has just completed a third runway system.
 
-This seemed odd. Britain was having an exquisitely detailed argument about whether one more runway could fit inside a carbon budget, while much of the world appeared to be pouring concrete.
-
-So I built a dataset.
+The contrast prompted me to build a dataset. What I found was not a simple story of British restraint and everyone else's expansion. France, the Netherlands and Austria also bring environmental limits into capacity decisions, while Singapore pairs a serious aviation climate policy with major airport growth. Britain's distinctive feature is the requirement to fit international aviation inside legally binding, economy-wide carbon budgets. Gatwick's approval shows that this is a compatibility test, not a ban on expansion.
 
 It is not a census of every airport project. It is a deliberately mixed sample of 30 major expansions, weighted towards new airports, runways, large hubs and useful rich-country comparisons. For each one I tried to answer a narrower question than "does this country care about climate?"
 
@@ -34,23 +32,25 @@ window.addEventListener('message',function(event){var frame=document.getElementB
 
 ## Britain is not alone
 
-The simplest version of the story does not survive contact with Britain itself. [Gatwick's Northern Runway project received development consent in September 2025](https://www.gov.uk/government/news/gatwick-airport-northern-runway-development-consent-decision-announced). The same national carbon-budget framework that makes Heathrow contentious can accommodate airport expansion. The question is what a particular project must demonstrate, not whether Britain builds airports.
+Britain subjects expansion to carbon budgets without ruling it out. [Gatwick's Northern Runway project received development consent in September 2025](https://www.gov.uk/government/news/gatwick-airport-northern-runway-development-consent-decision-announced). The same national carbon-budget framework that makes Heathrow contentious can accommodate airport expansion. The question is what a particular project must demonstrate, not whether Britain builds airports.
 
 That approval was not a quick exemption from the rules. A [provisional decision in February 2025](https://www.gov.uk/government/speeches/transport-planning-gatwick-airport) led to further consideration of conditions, including noise and public transport, before final consent and subsequent litigation.
+
+Heathrow nevertheless represents a much larger expansion, with additional emissions that build later, closer to and beyond the UK's net-zero deadline. Calling both projects "another runway" hides the physical difference. Gatwick is [repositioning its existing standby Northern Runway](https://www.gatwickairport.com/company/future-plans/northern-runway.html) to bring it into routine use alongside the main runway, [for smaller departing aircraft only](https://www.gatwickairport.com/on/demandware.static/-/Sites-Gatwick-Library/default/dwbb223e54/images/Corporate-PDFs/Northern-Runway/Other-Consultation-Documents/other-consultation-virtual-exhibition.pdf). Heathrow proposes a full new runway up to 3,500 metres long. The government's Gatwick figure is [up to 100,000 additional flights a year](https://www.gov.uk/government/news/gatwick-to-open-second-runway-as-government-wins-legal-challenge); Heathrow's proposal allows [up to 276,000](https://www.heathrow.com/expansion/about-expansion). These describe potential capacity, not a prediction that every new flight happens immediately.
+
+The emissions estimates make the scale difference tangible. Gatwick's assessed additional aviation emissions average **about 1.12 million tonnes of CO₂-equivalent a year during 2033–37**. Heathrow's rise from **0.4 million tonnes a year during 2038–42**, to **2.4 million in 2050**, and **4.5 million a year once expansion is complete in 2054**. The eventual Heathrow increment is roughly **four times** the quoted Gatwick annual increment. That is an intuitive comparison of scale, not a like-for-like forecast: Gatwick's assessment uses Jet Zero's high-ambition assumptions, Heathrow's uses current policy, and the dates differ. ([Gatwick decision, paragraphs 154–157](https://nsip-documents.planninginspectorate.gov.uk/published-documents/TR020005-004237-GATWICK%20AIRPORT%20NORTHERN%20RUNWAY%20DCO%20-%20Decision%20Letter%20-%2021%20September%202025.pdf); [CCC, Table 2.1](https://www.theccc.org.uk/wp-content/uploads/2026/09/Advice-to-the-UK-Government-on-proposed-Heathrow-Airport-expansion-64r872u923i92184y34r2398u.pdf))
+
+Timing makes that larger increment harder to accommodate. Heathrow's additional emissions ramp up around and after 2050, when the UK must balance its much smaller remaining emissions with removals. Gatwick has not simply used up a pot of carbon-budget space that otherwise belonged to Heathrow: the quoted assessments concern different periods, and neither airport owns a reserved share of the national budget.
+
+This is why the headline percentages cannot be compared. Gatwick's **0.66%** measures its total additional emissions of **6.34 million tonnes over 2033–37**, including non-aviation sources, against the **entire five-year Sixth Carbon Budget**. The CCC's Heathrow **6.9%** compares the eventual aviation impact of full expansion, scheduled for **2054**, with projected remaining UK **CO₂ emissions in 2050, before removals**. Different periods, emissions boundaries and denominators make these different accounting exercises, not evidence that Heathrow is ten times worse. Nor does a small budget percentage establish that there is spare capacity to absorb it.
 
 The carbon reasoning matters more than the headline approval. The government accepted that Gatwick would add emissions, but concluded that these could be managed within its aviation-wide Jet Zero strategy and its plans for meeting national targets. It relied on projected decarbonisation, acknowledging uncertainty about the technologies involved. The budgets constrain the economy as a whole; they do not automatically prohibit every project that increases emissions. ([Court of Appeal's account of the decision](https://www.bailii.org/ew/cases/EWCA/Civ/2026/1040.html))
 
 The legal distinction was between a significant emissions increase and one that would materially undermine meeting the UK's targets. Those are not the same finding. A decision surviving legal challenge does not demonstrate that the forecast reductions will actually arrive. ([Analysis of the High Court judgment](https://www.39essex.com/our-thinking/gatwicks-northern-runway-project-cleared-for-take-off-r-on-the-application-of-barclay-and-another-v-secretary-of-state-for-transport-and-another-2026-ewhc-1556-admin/))
 
-The numbers give that distinction some substance. Gatwick's expansion was assessed as adding **6.34 million tonnes of CO₂-equivalent over 2033–37**, about **0.66% of the Sixth Carbon Budget**. Of that, 5.58 million tonnes came from aviation: roughly **1.12 million tonnes a year**. These were forecasts using Jet Zero's high-ambition assumptions, not emissions already eliminated. ([Decision letter, paragraphs 154–157](https://nsip-documents.planninginspectorate.gov.uk/published-documents/TR020005-004237-GATWICK%20AIRPORT%20NORTHERN%20RUNWAY%20DCO%20-%20Decision%20Letter%20-%2021%20September%202025.pdf))
-
-Heathrow's additional aviation emissions build later: the CCC estimates **0.4 million tonnes a year during 2038–42**, **2.4 million in 2050** and **4.5 million once expansion is complete in 2054**, under current policy. The final figure is roughly four times Gatwick's earlier annual increment, but different dates and policy assumptions prevent a like-for-like comparison. Heathrow's challenge is timing as well as size: its emissions ramp up as the country approaches net zero, when remaining emissions must be balanced by removals. ([CCC, Table 2.1](https://www.theccc.org.uk/wp-content/uploads/2026/09/Advice-to-the-UK-Government-on-proposed-Heathrow-Airport-expansion-64r872u923i92184y34r2398u.pdf))
-
-The CCC's headline **6.9%** needs particular care. It compares Heathrow's full expansion impact, scheduled for 2054, with projected remaining UK CO₂ emissions in 2050, before removals. Gatwick's **0.66%** uses an entire five-year carbon budget instead. They are different denominators, not evidence that Heathrow is ten times worse. Nor does a small budget percentage establish that there is spare capacity to absorb it.
-
 Gatwick therefore exposes a question that a simple approved/refused comparison misses: **how much confidence in future decarbonisation is enough to approve expansion now?**
 
-The European comparisons complicate the picture further.
+France, the Netherlands and Austria show that Britain is not alone in allowing environmental constraints to affect airport capacity.
 
 France is the clearest counterexample. Paris Charles de Gaulle was supposed to get a huge Terminal 4. In 2021 the French government told the airport operator to abandon the project because it no longer matched the country's environmental ambitions. Paris is now planning substantial modernisation again, but the cancellation matters. Climate policy did not merely require a greener terminal. It helped stop a capacity project.
 
@@ -66,7 +66,7 @@ The dividing line is not "Europe says no, everyone else says yes". It is messier
 
 ## Singapore makes the distinction clearer
 
-Singapore is the comparison I find most useful because it removes an easy explanation.
+Singapore shows that a serious commitment to decarbonising aviation can coexist with very large capacity expansion.
 
 You could look at Dubai or Beijing and say that Britain simply has a more ambitious climate regime. Singapore makes that harder. Its [Sustainable Air Hub Blueprint](https://www.caas.gov.sg/sustainability/sustainable-air-hub-blueprint/) explicitly targets net-zero emissions from **domestic and international aviation by 2050**. A [sustainable aviation fuel levy now starts with departures on 1 January 2027, for tickets sold from 1 October 2026](https://www.caas.gov.sg/resources/media-and-publication/newsroom/sustainable-aviation-fuel--saf--levy-to-be-deferred/). The state is not ignoring aircraft emissions.
 
@@ -94,7 +94,7 @@ The distinction matters because a compatibility assessment can expose assumption
 
 ## The rest of the world is building
 
-Once you move outside Europe, the centre of gravity shifts.
+In the projects reviewed outside Europe, climate commitments commonly accompany capacity growth without a demonstrated UK-style carbon-budget compatibility test. That is a finding about this selected sample, not a global frequency estimate.
 
 In the developing Asian and Gulf projects in this sample, airport capacity is generally framed as strategic infrastructure. Delhi's new Noida airport, Navi Mumbai, Beijing Daxing, Hong Kong's third runway system and Istanbul's mega-airport are responses to congestion, urban growth, tourism, trade and hub competition. Dubai's ambition for Al Maktoum is on another scale again.
 
@@ -109,7 +109,7 @@ This is also where my dataset becomes least satisfying. Terminal projects are no
 
 ## What this comparison can and cannot say
 
-There are two reasons not to turn the four colours on the map into a league table.
+The 30 projects illustrate different decision frameworks; they cannot establish a global league table or how often climate policy constrains expansion. Two limitations matter especially.
 
 First, airport decisions are path-dependent. Brisbane's new parallel runway opened in 2020 after a planning process that long pre-dated Australia's current statutory net-zero framework. Beijing Daxing opened in 2019. Comparing those decisions directly with Heathrow in 2026 would confuse chronology with policy preference. The interactive therefore shows current climate commitments alongside the project status, but the prominence score is based on the role climate played in the capacity decision, not on how ambitious the country looks today.
 
@@ -121,13 +121,7 @@ I also left unknowns as unknowns. The phrase "net zero by 2050" is easy to find 
 
 ## What the argument is really about
 
-I started this expecting to write one of two articles.
-
-The first was that Britain had become an outlier, paralysing itself over Heathrow while the rest of the world built.
-
-The second was that the apparent global airport boom was misleading, and that other rich countries were quietly imposing the same constraints.
-
-Neither is quite right.
+The central distinction is institutional: which emissions are covered, what constrains an expansion decision, and how much confidence is placed in future decarbonisation.
 
 Britain has peers. France has cancelled airport capacity on environmental grounds. Dutch policy has tried to constrain Schiphol. Austria has litigated a runway through the climate question. These cases show several ways environmental limits can enter a capacity decision; they do not establish a ranking of continents.
 

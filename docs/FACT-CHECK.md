@@ -53,3 +53,15 @@ Read the primary Gatwick decision letter, paragraphs 154–157 (linked in the ar
 Read the full CCC September 2026 report, Table 2.1 and its notes, pp. 33–35 (linked in the article): incremental aviation 0.4 MtCO₂e annual average during CB7, 2.4 in 2050, 4.5 on full expansion in 2054, under Current Trends. Surface access, construction and airport operations are excluded from this table. The 6.9% statistic compares full expansion against 2050 residual CO₂; it does not describe scheduled 2050 expansion or a share of a net-zero budget.
 
 Removed the compressed 6.9% claim from the introduction and explained its denominator beside the comparison. The roughly fourfold scale illustration compares aviation increments only, explicitly qualified by differing dates and assumptions. No like-for-like ratio or spare carbon-budget headroom is claimed. No dataset values or classifications changed.
+
+## Answer-first revision and runway scale (17 September 2026)
+
+The standfirst and opening now state the institutional finding before the personal investigation unfolds. Section openings identify their finding; the ending no longer stages a delayed discovery. The selected-sample limitation and Gatwick approval remain explicit. Existing emissions figures retain their dates, modelling assumptions and boundaries.
+
+New primary-source checks:
+
+- [Gatwick's project description](https://www.gatwickairport.com/company/future-plans/northern-runway.html) confirms realignment of the existing Northern Runway, with its centre line moved 12 metres north. [Its consultation exhibition](https://www.gatwickairport.com/on/demandware.static/-/Sites-Gatwick-Library/default/dwbb223e54/images/Corporate-PDFs/Northern-Runway/Other-Consultation-Documents/other-consultation-virtual-exhibition.pdf) specifies smaller departing aircraft on the northern runway, all arrivals and larger departing aircraft on the main runway. This is not an equivalent unrestricted new runway.
+- [DfT's legal-challenge announcement](https://www.gov.uk/government/news/gatwick-to-open-second-runway-as-government-wins-legal-challenge) gives up to 100,000 additional annual flights. [Heathrow's proposal](https://www.heathrow.com/expansion/about-expansion) gives a runway up to 3,500 metres long and up to 276,000 additional annual flights. These are capacity descriptions, not same-year demand forecasts or a derivation of the emissions ratio. Passenger totals were not needed and were not added.
+- Investigated comparative opposition: [Hillingdon's coalition account](https://www.hillingdon.gov.uk/article/4178/Hillingdon-Council-wins-its-fight-against-Heathrow-expansion) documents councils, the Mayor of London and national environmental groups; the [Supreme Court case record](https://www.supremecourt.uk/cases/uksc-2020-0042) records the later Heathrow appeal. [AP's Gatwick report](https://apnews.com/article/528783ed5b3e08eb18969ad4dfa92cfb) also documents national environmental opposition. These establish participation, not a comparable measure of breadth or intensity. No claim of stronger Heathrow opposition was added.
+
+No dataset, classification, interactive or production-site changes.
