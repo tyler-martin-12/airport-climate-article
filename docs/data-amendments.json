@@ -1,0 +1,158 @@
+[
+  {
+    "id": "terminal-3",
+    "field": "status",
+    "before": "Opening/commissioning 2026",
+    "after": "Opened 23 April 2026"
+  },
+  {
+    "id": "terminal-3",
+    "field": "verification_note",
+    "before": null,
+    "after": "Regular operations started 23 April 2026."
+  },
+  {
+    "id": "terminal-3",
+    "field": "verification_source",
+    "before": null,
+    "after": "https://www.fraport.com/en/newsroom/press-releases/2026/q1/fraport-inaugurates-the-new-terminal-3.html"
+  },
+  {
+    "id": "vienna-third-runway",
+    "field": "status",
+    "before": "Approved after litigation",
+    "after": "Abandoned November 2025 after legal approval"
+  },
+  {
+    "id": "vienna-third-runway",
+    "field": "status_group",
+    "before": "Approved",
+    "after": "Cancelled"
+  },
+  {
+    "id": "vienna-third-runway",
+    "field": "verification_note",
+    "before": null,
+    "after": "Operator discontinued the runway on economic and capacity grounds; the climate score describes the earlier litigation, not the reason for abandonment."
+  },
+  {
+    "id": "vienna-third-runway",
+    "field": "verification_source",
+    "before": null,
+    "after": "https://viennaairport.com/jart/prj3/news_press/uploads/db-con_def-uploads/va-news/PA2025/E-68_2025.pdf"
+  },
+  {
+    "id": "jfk-redevelopment",
+    "field": "national_climate_goal",
+    "before": "Federal 2050 goal, less binding than UK budgets",
+    "after": "Federal 2050 goal in the 2021 policy context; current continuity not established"
+  },
+  {
+    "id": "jfk-redevelopment",
+    "field": "commitment_type",
+    "before": "Target / pledge",
+    "after": "Historical target / current status uncertain"
+  },
+  {
+    "id": "jfk-redevelopment",
+    "field": "verification_note",
+    "before": null,
+    "after": "The FAA 2021 plan documents a historical aviation target. It does not establish unchanged current federal policy."
+  },
+  {
+    "id": "jfk-redevelopment",
+    "field": "verification_source",
+    "before": null,
+    "after": "https://www.faa.gov/general/2021-united-states-aviation-climate-action-plan"
+  },
+  {
+    "id": "lax-modernization",
+    "field": "national_climate_goal",
+    "before": "California carbon neutrality 2045 policy",
+    "after": "Federal 2050 goal in the 2021 policy context; current continuity not established"
+  },
+  {
+    "id": "lax-modernization",
+    "field": "commitment_type",
+    "before": "Target / pledge",
+    "after": "Historical target / current status uncertain"
+  },
+  {
+    "id": "lax-modernization",
+    "field": "verification_note",
+    "before": null,
+    "after": "The FAA 2021 plan documents a historical aviation target. It does not establish unchanged current federal policy."
+  },
+  {
+    "id": "lax-modernization",
+    "field": "verification_source",
+    "before": null,
+    "after": "https://www.faa.gov/general/2021-united-states-aviation-climate-action-plan"
+  },
+  {
+    "id": "oslo-third-runway-optimisation",
+    "field": "verification_source",
+    "before": null,
+    "after": "https://om.avinor.no/en/innovation/third-runway/progress-plan/"
+  },
+  {
+    "id": "oslo-third-runway-optimisation",
+    "field": "verification_note",
+    "before": null,
+    "after": "The operator reports the 2024 committee assessment that another runway is unlikely to be needed before 2040. This source does not independently establish a decarbonisation condition; the reviewed climate coding remains provisional."
+  },
+  {
+    "id": "pearson-long-term-transformation",
+    "field": "status",
+    "before": "Planning/investment",
+    "after": "Pearson LIFT first major programme construction launched May 2026"
+  },
+  {
+    "id": "pearson-long-term-transformation",
+    "field": "status_group",
+    "before": "Planning / policy",
+    "after": "Under construction"
+  },
+  {
+    "id": "pearson-long-term-transformation",
+    "field": "verification_source",
+    "before": null,
+    "after": "https://www.torontopearson.com/en/corporate/media/press-releases/2026-05-11"
+  },
+  {
+    "id": "pearson-long-term-transformation",
+    "field": "verification_note",
+    "before": null,
+    "after": "Operator confirms phased modernisation and expansion, including operational emissions measures. This does not establish climate as an approval constraint; confidence remains Low."
+  },
+  {
+    "id": "yvr-expansion-programme",
+    "field": "verification_source",
+    "before": null,
+    "after": "https://www.yvr.ca/en/about-yvr/environment/climate"
+  },
+  {
+    "id": "yvr-expansion-programme",
+    "field": "verification_note",
+    "before": null,
+    "after": "Current operator target covers net-zero operations by 2030. The broader expansion entry and its climate-constraint coding remain low-confidence; this is not a verified aircraft-emissions target."
+  },
+  {
+    "id": "gatwick-northern-runway",
+    "field": "evidence_note",
+    "before": "Approved under same national framework as Heathrow.",
+    "after": "Additional emissions accepted as manageable through national aviation decarbonisation policy; binding budgets were not treated as an automatic project veto."
+  },
+  {
+    "id": "gatwick-northern-runway",
+    "field": "verification_note",
+    "before": null,
+    "after": "The decision relied on forecast reductions and Jet Zero policy despite technological uncertainty. Legal acceptance is not verification that those reductions will be delivered."
+  },
+  {
+    "id": "gatwick-northern-runway",
+    "field": "verification_source",
+    "before": null,
+    "after": "https://www.bailii.org/ew/cases/EWCA/Civ/2026/1040.html"
+  }
+]

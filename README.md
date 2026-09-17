@@ -67,3 +67,9 @@ Do not push to `my-blog` or trigger Netlify: its `main` branch auto-deploys. Pub
 No `.env`, credentials, source history, subscriber forms, Netlify functions/configuration, mailing scripts, private drafts or unrelated articles are included. The source repository itself was not modified. `COPY-MANIFEST.json` records source paths, commit and checksums for copied/adapted files; it is provenance, not a mechanism to access the private source.
 
 `package.json` has `private: true` to prevent accidental **npm** publication; this GitHub repository is intentionally public. Public visibility does not automatically add this repository to a ChatGPT GitHub App installation. If connector discovery still fails, provide this repository URL directly for public web/raw-file retrieval.
+
+## Completed implementation handoff
+
+The supplied article and 30-row interactive are now installed. See [current fact-check and limitations](docs/FACT-CHECK.md), [explicit data amendments](docs/data-amendments.json), and [browser QA](docs/QA.md). Source ZIP/XLSX stay outside this checkout. Do not invent missing international-aviation coverage or reconcile the row counts to the workbook's inconsistent synthesis.
+
+For later selective porting, copy only `src/pages/blog/airport-climate.md` and `public/airport-climate/`. This workshop's homepage, shared scaffold and configuration are not production changes. Review the PR; do not deploy or merge automatically.

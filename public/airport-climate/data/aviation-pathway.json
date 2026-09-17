@@ -1,0 +1,60 @@
+{
+  "reviewed": "2026-09-17",
+  "flight": {
+    "origin": "LHR",
+    "destination": "JFK",
+    "direction": "one-way",
+    "cabin": "economy",
+    "metric": "kg direct CO2; no RF, CH4, N2O or WTT",
+    "factor": 0.06826,
+    "factor_cell": "Business travel- air!J28",
+    "factor_year": 2026,
+    "distance_km": 5539.429319302669,
+    "distance_uplift_already_in_factor": 0.08,
+    "kg_co2": 378.1214453356002,
+    "display_kg_co2": 380,
+    "source": "https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2026",
+    "workbook": "https://assets.publishing.service.gov.uk/media/6a29392bade52dc0882218a8/ghg-conversion-factors-2026-full-set.xlsx",
+    "coordinates": {
+      "LHR": [
+        51.4775,
+        -0.4613888888888889
+      ],
+      "JFK": [
+        40.63992805555556,
+        -73.77869222222222
+      ]
+    }
+  },
+  "pathway": {
+    "year": 2050,
+    "scope": "UK civil aviation including proposed Heathrow expansion; excludes military",
+    "metric": "share of sector-wide abatement against CCC no-further-action 2050 baseline; not share of a flight",
+    "source": "https://www.theccc.org.uk/wp-content/uploads/2026/09/Advice-to-the-UK-Government-on-proposed-Heathrow-Airport-expansion-64r872u923i92184y34r2398u.pdf",
+    "figure": "3.1, pages 44\u201345",
+    "route_forecast_kg": null,
+    "segments": [
+      {
+        "key": "residual",
+        "label": "Residual, balanced by removals",
+        "percent": 36
+      },
+      {
+        "key": "saf",
+        "label": "SAF accounting savings",
+        "percent": 20
+      },
+      {
+        "key": "efficiency",
+        "label": "Aircraft and operational efficiency",
+        "percent": 20
+      },
+      {
+        "key": "demand",
+        "label": "Slower demand growth",
+        "percent": 24
+      }
+    ],
+    "baseline_units": 100
+  }
+}
