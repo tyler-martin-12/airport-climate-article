@@ -13,7 +13,7 @@
     "distance_uplift_already_in_factor": 0.08,
     "kg_co2": 378.1214453356002,
     "display_kg_co2": 380,
-    "axis_max_kg": 400,
+    "axis_max_kg": 380,
     "source": "https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2026",
     "workbook": "https://assets.publishing.service.gov.uk/media/6a29392bade52dc0882218a8/ghg-conversion-factors-2026-full-set.xlsx",
     "coordinates": {
@@ -38,23 +38,28 @@
       {
         "key": "residual",
         "label": "Residual, balanced by removals",
-        "percent": 36
+        "percent": 36,
+        "illustrative_kg_equivalent": 136.8
       },
       {
         "key": "saf",
         "label": "SAF accounting savings",
-        "percent": 20
+        "percent": 20,
+        "illustrative_kg_equivalent": 76.0
       },
       {
         "key": "efficiency",
         "label": "Aircraft and operational efficiency",
-        "percent": 20
+        "percent": 20,
+        "illustrative_kg_equivalent": 76.0
       },
       {
         "key": "demand",
         "label": "Slower demand growth",
-        "percent": 24
+        "percent": 24,
+        "illustrative_kg_equivalent": 91.2
       }
-    ]
+    ],
+    "illustrative_budget_kg": 380
   }
 }
