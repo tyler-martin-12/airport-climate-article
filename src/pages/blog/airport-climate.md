@@ -3,6 +3,8 @@ layout: "../../layouts/BlogPost.astro"
 title: "The world is building airports. Britain is arguing about one."
 date: "2026-09-16"
 description: "Britain is not alone in constraining airport expansion, but it tests aviation growth against binding, economy-wide carbon budgets that include international flights, while Singapore plans to decarbonise aviation as its hub grows."
+image: "/airport-climate/thumbnail.png"
+imageAlt: "Editorial illustration of a Union Jack-clad figure firing an aeroplane towards its own foot."
 slug: "airport-climate"
 tags: ["aviation", "climate", "policy"]
 ---
