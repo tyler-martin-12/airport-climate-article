@@ -65,3 +65,7 @@ New primary-source checks:
 - Investigated comparative opposition: [Hillingdon's coalition account](https://www.hillingdon.gov.uk/article/4178/Hillingdon-Council-wins-its-fight-against-Heathrow-expansion) documents councils, the Mayor of London and national environmental groups; the [Supreme Court case record](https://www.supremecourt.uk/cases/uksc-2020-0042) records the later Heathrow appeal. [AP's Gatwick report](https://apnews.com/article/528783ed5b3e08eb18969ad4dfa92cfb) also documents national environmental opposition. These establish participation, not a comparable measure of breadth or intensity. No claim of stronger Heathrow opposition was added.
 
 No dataset, classification, interactive or production-site changes.
+
+## Aviation decarbonisation explainer
+
+Added a targeted prose/graphic insert immediately before the Gatwick confidence question. See [full calculation and source audit](AVIATION-PATHWAY.md). The graphic deliberately separates a 2026 direct-CO₂ passenger estimate from the CCC's official 2050 sector-wide shares; no unsupported route forecast or conversion between exhaust CO₂ and SAF/removals accounting is made. Original airport records, scores and article sections are unchanged.
